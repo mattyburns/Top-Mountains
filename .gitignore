@@ -19,3 +19,6 @@
 .byebug_history
 
 /coverage
+/public/packs
+/public/packs-test
+/node_modules
