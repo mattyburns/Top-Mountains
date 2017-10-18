@@ -10,9 +10,15 @@
 
   <body>
     <nav>
-      <%= link_to "Sign In", new_user_session_path %>
-      <%= link_to "Sign Up", new_user_registration_path %>
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+      <% if user_signed_in? %>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        <% if current_user.admin? %>
+          <%= link_to "Admin Section", admin_path %>
+        <% end %>
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path %>
+        <%= link_to "Sign Up", new_user_registration_path %>
+      <% end %>
     </nav>
     <%= flash[:notice] %>
     <%= yield %>
