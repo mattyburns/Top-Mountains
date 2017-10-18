@@ -1,0 +1,44 @@
+<h1>Add a New Mountain</h1>
+
+<%= form_for @mountain do |f| %>
+  <% if @mountain.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@mountain.errors.count, "error") %> prohibited this Mountain from being saved.</h3>
+      <ul>
+        <%= @mountain.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <%= f.label :name, "Name" %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="row">
+    <%= f.label :address, "Address" %><br />
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="row">
+    <%= f.label :city, "City" %><br />
+    <%= f.text_field :city %>
+  </div>
+
+  <div class='row'>
+    <%= f.label :state, "State" %>
+    <%= f.collection_select(:state, @state_collection, :last, :last) %>
+  </div>
+
+  <div class="row">
+    <%= f.label :zip, "Zip Code" %><br />
+    <%= f.text_field :zip %>
+  </div>
+
+  <div class='row'>
+  <%= f.submit "Add Mountain"%>
+</div>
+
+<% end %>

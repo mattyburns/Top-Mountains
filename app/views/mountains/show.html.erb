@@ -1,0 +1,43 @@
+<h1><%= @mountain.name %></h1>
+
+<p>
+  <%= @mountain.address %>,<br />
+  <%= @mountain.city %>, <%= @mountain.state %> <%= @mountain.zip %>
+</p>
+
+<h2>Reviews For <%= @mountain.name %></h2>
+
+<h3>Add a New Review</h3>
+
+<%= form_for [@mountain, @review] do |f| %>
+  <% unless @review.errors.full_messages == [] %>
+    <%= @review.errors.full_messages %>
+  <% end %>
+  <div class='row'>
+    <%= f.label :rating, 'Rating' %><br />
+    <%= f.text_field :rating %>
+  </div>
+
+  <div class='row'>
+    <%= f.label :skiing_review, 'Mountain Review' %><br />
+    <%= f.text_area :skiing_review, size: "60x8" %>
+  </div>
+
+  <div class='row'>
+    <%= f.label :lodging_review, 'Lodging Review' %><br />
+    <%= f.text_area :lodging_review, size: "60x8" %>
+  </div>
+
+  <div class='row'>
+    <%= f.label :food_review, 'Food Review' %><br />
+    <%= f.text_area :food_review, size: "60x8" %>
+  </div>
+
+  <div class='row'>
+    <%= f.submit 'Add Review' %>
+  </div>
+<% end %>
+
+<% @mountain_reviews.each do |review| %>
+  <%= review.rating  %>
+<% end %>
