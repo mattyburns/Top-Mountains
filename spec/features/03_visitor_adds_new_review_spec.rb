@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature "visitor can add a new review" do
-  scenario "visitor is logged in and adds a review successfully" do
+xfeature "visitor can add a new review" do
+  xscenario "visitor is logged in and adds a review successfully" do
     stowe = Mountain.create(name: 'Stowe', address: '5428 Mountain Road', city: 'Stowe',
     state: 'VT', zip: '02135', url: 'https://www.stowe.com/')
 
@@ -21,7 +21,7 @@ feature "visitor can add a new review" do
     expect(page).to have_content "This is an amazing Mountain"
   end
 
-  scenario "visitor is logged in and unsuccessfuly submits review" do
+  xscenario "visitor is logged in and unsuccessfuly submits review" do
     stowe = Mountain.create(name: 'Stowe', address: '5428 Mountain Road', city: 'Stowe',
     state: 'VT', zip: '02135', url: 'https://www.stowe.com')
 
@@ -34,7 +34,7 @@ feature "visitor can add a new review" do
     expect(page).to have_content "Rating can't be blank"
   end
 
-  scenario "visitor is not logged in and visits mountain show page" do
+  xscenario "visitor is not logged in and visits mountain show page" do
     expect(page).to have_content "Sign Up/Log In"
 
     click_button "Add Review"

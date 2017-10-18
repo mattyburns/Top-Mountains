@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature "visitor can add new mountain" do
-  scenario "visitor is logged in and adds a mountain successfully" do
+xfeature "visitor can add new mountain" do
+  xscenario "visitor is logged in and adds a mountain successfully" do
   #find out specific route
     visit new_mountain_path
     expect(page).to have_content "Sign Out"
@@ -22,7 +22,7 @@ feature "visitor can add new mountain" do
     expect(page).to have_content "http://www.stowe.com/"
   end
 
-  scenario "visitor is signed in and does not provide proper information for a mountain" do
+  xscenario "visitor is signed in and does not provide proper information for a mountain" do
     #find out specific route
     visit new_mountain_path
 
@@ -40,7 +40,7 @@ feature "visitor can add new mountain" do
     click_button "Save"
   end
 
-  scenario "visitor is not signed in and sees a link to sign up/log in" do
+  xscenario "visitor is not signed in and sees a link to sign up/log in" do
     #find out specific route
     visit new_mountain_path
 
