@@ -29,6 +29,7 @@ end
 
 group :test do
   gem 'coveralls', require: false
+  gem 'warden'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
