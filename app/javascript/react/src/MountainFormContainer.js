@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FormItem from './FormItem'
+import DropDown from './DropDown'
 import ErrorBox from './ErrorBox'
 
 
@@ -67,7 +68,7 @@ class MountainFormContainer extends Component {
     }
 
     if (this.state.state === ""){
-      errors.push("State field can't be blank. ")
+      errors.push("A state must be selected. ")
     }
 
     if (this.state.zip === ""){
@@ -155,7 +156,7 @@ class MountainFormContainer extends Component {
           handler={this.handleCity}
         />
 
-        <FormItem
+        <DropDown
           name="state"
           content={this.state.state}
           nameText="State:"
