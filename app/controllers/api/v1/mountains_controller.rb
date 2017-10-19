@@ -10,7 +10,7 @@ class Api::V1::MountainsController < ApplicationController
       state: mountain["state"],
       zip: mountain["zip"],
       image_url: mountain["imageUrl"],
-      creator_id: current_user.id
+      creator_id: mountain["creatorId"]
     )
 
     render json: new_mountain
