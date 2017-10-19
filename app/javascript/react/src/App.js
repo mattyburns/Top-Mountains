@@ -1,5 +1,6 @@
 import React from 'react';
 import MountainFormContainer from './MountainFormContainer'
+import ReviewFormContainer from './ReviewFormContainer'
 
 class App extends React.Component{
  constructor(props) {
@@ -15,6 +16,7 @@ class App extends React.Component{
       <div>
       <h1>Hello World</h1>
         <MountainFormContainer />
+        <ReviewFormContainer />
       </div>
     )
   }

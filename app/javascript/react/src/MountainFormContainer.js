@@ -13,8 +13,6 @@ class MountainFormContainer extends Component {
       zip: '',
       imageUrl: '',
 
-
-
     }
     this.handleName = this.handleName.bind(this);
     this.handleAddress = this.handleAddress.bind(this);
