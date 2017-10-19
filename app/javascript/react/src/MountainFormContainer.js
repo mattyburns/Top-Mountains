@@ -19,7 +19,7 @@ class MountainFormContainer extends Component {
     this.handleState = this.handleState.bind(this);
     this.handleZip = this.handleZip.bind(this);
     this.handleImageUrl = this.handleImageUrl.bind(this);
-    this.handleSubmitForm = this.handleSubmitForm.bind(this);
+    this.handleMountainSubmitForm = this.handleMountainSubmitForm.bind(this);
   }
 
   handleName(event) {
@@ -47,7 +47,7 @@ class MountainFormContainer extends Component {
     }
 
 
-  handleSubmitForm(event){
+  handleMountainSubmitForm(event){
     console.log(this.state)
     event.preventDefault();
     let mountainPayload = {
@@ -58,7 +58,7 @@ class MountainFormContainer extends Component {
       zip: this.state.zip,
       imageUrl: this.state.imageUrl
     }
-    console.log(mountainPayload)
+    this.props.addNewMountain(mountainPayload);
   }
 
 
@@ -109,7 +109,7 @@ class MountainFormContainer extends Component {
           handler={this.handleImageUrl}
         />
 
-        <input type="submit" className="button" value="Submit " onClick={this.handleSubmitForm} />
+        <input type="submit" className="button" value="Submit " onClick={this.handleMountainSubmitForm} />
       </form>
     )
   }
