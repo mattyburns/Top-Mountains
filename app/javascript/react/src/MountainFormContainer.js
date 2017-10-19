@@ -11,8 +11,7 @@ class MountainFormContainer extends Component {
       city: '',
       state: '',
       zip: '',
-      imageUrl: '',
-
+      imageUrl: ''
     }
     this.handleName = this.handleName.bind(this);
     this.handleAddress = this.handleAddress.bind(this);
@@ -66,7 +65,7 @@ class MountainFormContainer extends Component {
   render() {
     return (
       <form className="callout" id="shipping-address-form">
-        <h1>Mountain Form</h1>
+        <h4>Mountain Form</h4>
 
         <FormItem
           name="name"

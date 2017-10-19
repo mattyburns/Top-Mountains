@@ -9,9 +9,7 @@ class ReviewFormContainer extends Component {
       rating: '',
       skiingReview: '',
       foodReview: '',
-      lodgingReview: '',
-
-
+      lodgingReview: ''
     }
     this.handleRating = this.handleRating.bind(this);
     this.handleSkiingReview = this.handleSkiingReview.bind(this);
@@ -52,7 +50,7 @@ class ReviewFormContainer extends Component {
   render() {
     return (
       <form className="callout" id="shipping-address-form">
-        <h1>Review Form</h1>
+        <h4>Review Form</h4>
 
         <FormItem
           name="rating"
