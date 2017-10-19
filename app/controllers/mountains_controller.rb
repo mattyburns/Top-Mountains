@@ -1,6 +1,5 @@
 class MountainsController < ApplicationController
-# before_action :authorize_user, except: [:index, :show]
-# before_action :authorize_admin, only: [:destroy]
+before_action :authorize_user, except: [:index, :show]
 
   def index
     @mountains = Mountain.all
@@ -55,15 +54,15 @@ class MountainsController < ApplicationController
     params.require(:mountain).permit(:name, :address, :city, :state, :zip, :image_url, :trail_count, :ticket_price, :rental_price)
   end
 
-  # def authorize_user
-  #   if !user_signed_in? || !current_user.admin?
-  #     raise ActionController::RoutingError.new("You must be logged in to view this page.")
-  #   end
-  # end
+  def authorize_user
+    if !user_signed_in?
+      raise ActionController::RoutingError.new("You must be logged in to view this page.")
+    end
+  end
 
-#   def authorize_admin
-#     if !current_user.admin?
-#       raise ActionController::RoutingError.new("You must be an administrator to be able to do that.")
-#     end
-#   end
+  def authorize_admin
+    if !current_user.admin?
+      raise ActionController::RoutingError.new("You must be an administrator to be able to do that.")
+    end
+  end
 end
