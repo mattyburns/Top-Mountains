@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :mountains, only: [:create]
+      scope :user do
+        get 'is_signed_in', to: 'user#is_signed_in?'
+      end
     end
   end
 
