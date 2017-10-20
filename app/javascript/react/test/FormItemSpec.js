@@ -26,10 +26,5 @@ describe('FormItem', () => {
     expect(wrapper.find('input')).toBePresent();
   });
 
-  // it ('should inovke the onChange function when changed', () => {
-  //   wrapper.simulate('change',wrapper.find('input'));
-  //   expect(onChange).toHaveBeenCalled();
-  // })
-
 
 })

@@ -106,7 +106,6 @@ class MountainFormContainer extends Component {
 
 
   render() {
-    console.log(this.state)
     let validateSubmit = (event) => this.validateSubmit(event)
     let errors;
     if(this.state.errors.length) {
