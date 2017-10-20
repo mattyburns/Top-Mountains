@@ -16,41 +16,22 @@ class MountainFormContainer extends Component {
       imageUrl: '',
       errors: []
     }
-    this.handleName = this.handleName.bind(this);
-    this.handleAddress = this.handleAddress.bind(this);
-    this.handleCity = this.handleCity.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleState = this.handleState.bind(this);
-    this.handleZip = this.handleZip.bind(this);
-    this.handleImageUrl = this.handleImageUrl.bind(this);
     this.handleMountainSubmitForm = this.handleMountainSubmitForm.bind(this);
     this.validateContent = this.validateContent.bind(this);
     this.validateSubmit = this.validateSubmit.bind(this);
   }
 
-  handleName(event) {
-    this.setState({ name: event.target.value })
-    }
-
-  handleAddress(event) {
-    this.setState({ address: event.target.value })
-    }
-
-  handleCity(event) {
-    this.setState({ city: event.target.value })
-    }
+  handleChange(event){
+    let field = event.target.name
+    let newValue = event.target.value
+    this.setState({[field]: newValue})
+  }
 
   handleState(event) {
     this.setState({ state: event.target.value })
     }
-
-  handleZip(event) {
-    this.setState({ zip: event.target.value })
-    }
-
-  handleImageUrl(event) {
-    this.setState({ imageUrl: event.target.value })
-    }
-
 
   validateContent(selection) {
     let errors = []
@@ -125,6 +106,7 @@ class MountainFormContainer extends Component {
 
 
   render() {
+    console.log(this.state)
     let validateSubmit = (event) => this.validateSubmit(event)
     let errors;
     if(this.state.errors.length) {
@@ -139,42 +121,42 @@ class MountainFormContainer extends Component {
           name="name"
           content={this.state.name}
           nameText="Name:"
-          handler={this.handleName}
+          handler={this.handleChange}
         />
 
         <FormItem
           name="address"
           content={this.state.address}
           nameText="Address:"
-          handler={this.handleAddress}
+          handler={this.handleChange}
         />
 
         <FormItem
           name="city"
           content={this.state.city}
           nameText="City:"
-          handler={this.handleCity}
+          handler={this.handleChange}
         />
 
         <DropDown
           name="state"
           content={this.state.state}
           nameText="State:"
-          handler={this.handleState}
+          handler={this.handleChange}
         />
 
         <FormItem
           name="zip"
           content={this.state.zip}
           nameText="Zip Code:"
-          handler={this.handleZip}
+          handler={this.handleChange}
         />
 
         <FormItem
           name="imageUrl"
           content={this.state.imageUrl}
           nameText="Image Url:"
-          handler={this.handleImageUrl}
+          handler={this.handleChange}
         />
 
 

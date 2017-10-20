@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Dropdown = props => {
+const DropDown = props => {
   return(
 
 <div>
@@ -65,4 +65,4 @@ const Dropdown = props => {
 
 }
 
-export default Dropdown;
+export default DropDown;
