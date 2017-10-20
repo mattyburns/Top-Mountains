@@ -15,7 +15,7 @@ class ReviewFormContainer extends Component {
     this.handleSkiingReview = this.handleSkiingReview.bind(this);
     this.handleFoodReview = this.handleFoodReview.bind(this);
     this.handleLodgingReview = this.handleLodgingReview.bind(this);
-    this.handleSubmitForm = this.handleSubmitForm.bind(this);
+    this.handleReviewSubmitForm = this.handleReviewSubmitForm.bind(this);
   }
 
   handleRating(event) {
@@ -34,16 +34,16 @@ class ReviewFormContainer extends Component {
     this.setState({ lodgingReview: event.target.value })
     }
 
-  handleSubmitForm(event){
+  handleReviewSubmitForm(event){
     console.log(this.state)
     event.preventDefault();
-    let mountainPayload = {
+    let reviewPayload = {
       rating: this.state.rating,
       skiingReview: this.state.skiingReview,
       foodReview: this.state.foodReview,
       lodgingReview: this.state.lodgingReview,
     }
-    console.log(mountainPayload)
+    this.props.addNewReview(reviewPayload);
   }
 
 
@@ -81,7 +81,7 @@ class ReviewFormContainer extends Component {
           handler={this.handleLodgingReview}
         />
 
-        <input type="submit" className="button" value="Submit " onClick={this.handleSubmitForm} />
+        <input type="submit" className="button" value="Submit " onClick={this.handleReviewSubmitForm} />
       </form>
     )
   }
