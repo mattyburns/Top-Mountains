@@ -71,12 +71,5 @@ class Mountain < ApplicationRecord
     inclusion: { in: STATES.map { |state| state[1] } }
   validates :zip, presence: true, length: { is: 5}
 
-  def self.search(search)
-    if search
-      find(:all, :conditions =>['name LIKE ?', "%#{search}"])
-    else
-      Mountain.all
-    end
-  end
 
 end

@@ -13,9 +13,142 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css?family=Lobster%7CSource+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
 
 body {
-  font-family: helvetica;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0px;
+  background-color: #9fbcdb;
 
-  
+}
+
+nav {
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  font-family: helvetica;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 3px;
+  padding-top: 4px;
+  margin-left: none;
+  margin-right: none;
+  vertical-align:  middle;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #dbdbdb;
+}
+
+form{
+  width: 50%;
+  font-size: .75em;
+  background-color: #ededed;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 5px;
+  padding-top: 1px;
+  margin: 2rem;
+  border-style: solid;
+  border-width: thin;
+  border-color: #729bc8;
+  border-radius: 10px;
+}
+
+.title {
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  margin: 0px;
+  padding: 5rem;
+  color: white;
+  font-size: 4rem;
+  text-shadow: 3px 3px black;
+  background-image: url(http://www.ospreypacks.com/stories/wp-content/uploads/2012/04/g19.jpg);
+  background-position: 0 -3rem;
+  background-size: cover;
+  border-style: solid;
+  border-width: 0px 0px 0px 0px;
+  border-color: #729bc8;
+}
+
+.button {
+    border: none;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: thin solid #e7e7e7;
+}
+.button:hover {
+  background-color: #9fbcdb;
+}
+
+/*input[type=text]:focus {
+  width: 25%;
+}*/
+
+input[type=text] {
+    width: 75px;
+    box-sizing: border-box;
+    border: thin solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    margin: 2px 2px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+select {
+  border-width: thin;
+  background-color: white;
+  border-radius: 4px;
+  font-family: 'Source Sans Pro', sans-serif;
+  }
+
+
+.container{
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  div{
+
+  }
+
+}
+
+.search-bar {
+  background-color: black;
+  box-sizing:border-box;
+  width: 50px;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  float: left;
+  align-items: left;
+}
+
+.sign-in{
+  float:right;
+  text-align: right;
+}
+
+.home{
+  float: center;
+  text-align: center;
 }
