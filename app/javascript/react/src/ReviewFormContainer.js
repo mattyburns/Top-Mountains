@@ -13,34 +13,18 @@ class ReviewFormContainer extends Component {
       lodgingReview: '',
       errors: []
     }
-    this.handleRating = this.handleRating.bind(this);
-    this.handleSkiingReview = this.handleSkiingReview.bind(this);
-    this.handleFoodReview = this.handleFoodReview.bind(this);
-    this.handleLodgingReview = this.handleLodgingReview.bind(this);
-    this.handleReviewSubmitForm = this.handleReviewSubmitForm.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.validateContent = this.validateContent.bind(this);
     this.validateSubmit = this.validateSubmit.bind(this);
   }
 
 
 
-  handleRating(event) {
-    this.setState({ rating: event.target.value })
-    }
-
-  handleSkiingReview(event) {
-    this.setState({ skiingReview: event.target.value })
-    }
-
-  handleFoodReview(event) {
-    this.setState({ foodReview: event.target.value })
-    }
-
-  handleLodgingReview(event) {
-    this.setState({ lodgingReview: event.target.value })
-    }
-
-
+  handleChange(event){
+    let field = event.target.name
+    let newValue = event.target.value
+    this.setState({[field]: newValue})
+  }
 
 
   validateContent(selection) {
@@ -107,29 +91,28 @@ class ReviewFormContainer extends Component {
           name="rating"
           content={this.state.rating}
           nameText="Rating:"
-          handler={this.handleRating}
+          handler={this.handleChange}
         />
 
         <FormItem
           name="skiingReview"
           content={this.state.skiingReview}
           nameText="Skiing Review:"
-          handler={this.handleSkiingReview
-          }
+          handler={this.handleChange}
         />
 
         <FormItem
           name="foodReview"
           content={this.state.foodReview}
           nameText="Food Review:"
-          handler={this.handleFoodReview}
+          handler={this.handleChange}
         />
 
         <FormItem
           name="lodgingReview"
           content={this.state.lodgingReview}
           nameText="Lodging Review:"
-          handler={this.handleLodgingReview}
+          handler={this.handleChange}
         />
         <div>
           {errors}

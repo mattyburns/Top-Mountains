@@ -8,10 +8,20 @@ class AppContainer extends React.Component{
    this.state = {
      mountains: [],
      reviews: [],
+     currentUser: []
    }
    this.addNewMountain = this.addNewMountain.bind(this)
    this.addNewReview = this.addNewReview.bind(this)
 
+ }
+
+ componentDidMount() {
+   fetch('/api/v1/user/is_signed_in')
+     .then(response => response.json())
+     .then(body => {
+       let user = body.user;
+       this.setState({currentUser: user })
+     })
  }
 
  addNewMountain(payLoad) {
@@ -35,6 +45,10 @@ class AppContainer extends React.Component{
     this.setState({ reviews: [...this.state.reviews, responseData] })
   })
  }
+
+
+
+
   render() {
     let addNewMountain = (payLoad) => this.addNewMountain(payLoad)
     let addNewReview = (payLoad) => this.addNewReview(payLoad)
