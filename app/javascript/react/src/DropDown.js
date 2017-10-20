@@ -1,5 +1,7 @@
 import React from 'react';
 
+//need to figure out why this is defaulting to Alabama and not setting to state
+
 const DropDown = props => {
   let states = [["AL","Alabama"],
   ["AK","Alaska"],

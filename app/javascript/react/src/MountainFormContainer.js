@@ -34,6 +34,7 @@ class MountainFormContainer extends Component {
     }
 
   validateContent(selection) {
+    debugger
     let errors = []
 
     if (this.state.name === ""){
@@ -91,7 +92,6 @@ class MountainFormContainer extends Component {
 
 
   handleMountainSubmitForm(event){
-    console.log(this.state)
     event.preventDefault();
     let mountainPayload = {
       name: this.state.name,
@@ -99,7 +99,8 @@ class MountainFormContainer extends Component {
       city: this.state.city,
       state: this.state.state,
       zip: this.state.zip,
-      imageUrl: this.state.imageUrl
+      imageUrl: this.state.imageUrl,
+      creatorId: this.props.currentUser.id
     }
     this.props.addNewMountain(mountainPayload);
   }
