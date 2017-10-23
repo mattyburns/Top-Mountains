@@ -12,8 +12,6 @@ class Api::V1::MountainsController < ApplicationController
       image_url: mountain["imageUrl"],
       creator_id: mountain["creatorId"]
     )
-
-    render json: new_mountain
-    # @mountain.regions = Region.where(id: params[:mountains][:regions])
+    render :json => {"mountain" => new_mountain}.to_json()
   end
 end

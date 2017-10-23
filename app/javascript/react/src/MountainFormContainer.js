@@ -34,7 +34,6 @@ class MountainFormContainer extends Component {
     }
 
   validateContent(selection) {
-    debugger
     let errors = []
 
     if (this.state.name === ""){
@@ -55,6 +54,10 @@ class MountainFormContainer extends Component {
 
     if (this.state.zip === ""){
       errors.push("Zip code field can't be blank. ")
+    }
+
+    if (!/([0-9])\d{4}/.test(this.state.zip)){
+      errors.push("Zip code must be 5 digits. ")
     }
 
 
@@ -86,7 +89,7 @@ class MountainFormContainer extends Component {
         return false;
       }
 
-      this.handleReviewSubmitForm()
+      this.handleMountainSubmitForm(event)
       this.handleClearForm(event)
     }
 
@@ -107,7 +110,7 @@ class MountainFormContainer extends Component {
 
 
   render() {
-    let validateSubmit = (event) => this.validateSubmit(event)
+    let handleSubmit = (event) => this.validateSubmit(event)
     let errors;
     if(this.state.errors.length) {
      errors = <ErrorBox errors={this.state.errors} />
@@ -165,7 +168,7 @@ class MountainFormContainer extends Component {
         </div>
 
 
-        <input type="submit" className="button" value="Submit " onClick={this.validateSubmit} />
+        <input type="submit" className="button" value="Submit " onClick={handleSubmit} />
       </form>
     )
   }
