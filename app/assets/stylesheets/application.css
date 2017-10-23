@@ -99,6 +99,24 @@ form{
   background-color: #9fbcdb;
 }
 
+.actions {
+    border: none;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: thin solid #e7e7e7;
+}
+.actions:hover {
+  background-color: #9fbcdb;
+}
 /*input[type=text]:focus {
   width: 25%;
 }*/
