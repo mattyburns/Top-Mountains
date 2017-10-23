@@ -1,6 +1,7 @@
 import React from 'react';
 import MountainFormContainer from './MountainFormContainer'
 import MountainIndex from './MountainIndex'
+import HeaderTile from './HeaderTile'
 
 class MountainIndexContainer extends React.Component{
  constructor(props) {
@@ -38,7 +39,9 @@ class MountainIndexContainer extends React.Component{
 
     return(
       <div>
-        <h3>Index Container</h3>
+
+        <HeaderTile title="Top Mountains"/>
+
         <MountainFormContainer
           addNewMountain={this.addNewMountain}/>
 

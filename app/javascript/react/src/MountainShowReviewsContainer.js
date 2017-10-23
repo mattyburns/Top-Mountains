@@ -1,6 +1,7 @@
 import React from 'react'
 import ReviewFormContainer from './ReviewFormContainer'
 import ReviewIndex from './ReviewIndex'
+import HeaderTile from './HeaderTile'
 
 
 class MountainShowReviewsContainer extends React.Component{
@@ -37,7 +38,9 @@ class MountainShowReviewsContainer extends React.Component{
 
     return(
       <div>
-        <h3>Show Container</h3>
+
+        <HeaderTile title ="Reviews"/>
+
         <ReviewFormContainer
           addNewReview={this.addNewReview} />
 

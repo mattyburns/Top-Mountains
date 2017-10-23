@@ -159,6 +159,7 @@ select {
   border: none;
   float: left;
   align-items: left;
+  white-space: nowrap;
 }
 
 .sign-in{
