@@ -3,7 +3,9 @@ import React from 'react';
 const MountianTile = props => {
   return(
 
-    <li>{props.mountain}</li>
+    <h3>Mountain Tile</h3>
+
+    // <li>{props.mountain}</li>
 
   )
 

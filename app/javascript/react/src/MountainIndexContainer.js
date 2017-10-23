@@ -1,5 +1,6 @@
 import React from 'react';
 import MountainFormContainer from './MountainFormContainer'
+import MountainIndex from './MountainIndex'
 
 class MountainIndexContainer extends React.Component{
  constructor(props) {
@@ -31,7 +32,7 @@ class MountainIndexContainer extends React.Component{
    })
  }
 
- }
+
   render() {
     let addNewMountain = (payLoad) => this.addNewMountain(payLoad)
 
@@ -41,7 +42,7 @@ class MountainIndexContainer extends React.Component{
         <MountainFormContainer
           addNewMountain={this.addNewMountain}/>
 
-        <MountianIndex />
+        <MountainIndex />
       </div>
     )
   }

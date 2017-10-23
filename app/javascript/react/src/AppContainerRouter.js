@@ -15,14 +15,14 @@
 //
 //  }
 //
-//  componentDidMount() {
-//    fetch('/api/v1/user/is_signed_in')
-//      .then(response => response.json())
-//      .then(body => {
-//        let user = body.user;
-//        this.setState({currentUser: user })
-//      })
-//  }
+ // componentDidMount() {
+ //   fetch('/api/v1/user/is_signed_in')
+ //     .then(response => response.json())
+ //     .then(body => {
+ //       let user = body.user;
+ //       this.setState({currentUser: user })
+ //     })
+ // }
 //
 //  addNewMountain(payLoad) {
 //    fetch('/api/v1/mountains', {

@@ -1,5 +1,6 @@
 import React from 'react'
 import ReviewFormContainer from './ReviewFormContainer'
+import ReviewIndex from './ReviewIndex'
 
 
 class MountainShowReviewsContainer extends React.Component{
