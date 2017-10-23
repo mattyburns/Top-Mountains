@@ -51,12 +51,17 @@ class AppContainer extends React.Component{
 
     return(
       <div>
-      <h3>App Container</h3>
+        <h3>App Container</h3>
         <MountainFormContainer
-        addNewMountain={this.addNewMountain}/>
+          addNewMountain={this.addNewMountain}/>
+
+        <MountianTile />
 
         <ReviewFormContainer
-        addNewReview={this.addNewReview} />
+          addNewReview={this.addNewReview} />
+
+        <ReviewTile />
+
       </div>
     )
   }
