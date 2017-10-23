@@ -3,7 +3,7 @@ import React from 'react';
 const ReviewTile = props => {
   return(
 
-    <p>ReviewTile</p>
+    <li>{props.review}</li>
 
   )
 
