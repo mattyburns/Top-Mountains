@@ -44,7 +44,7 @@ RSpec.describe Api::V1::MountainsController, type: :controller do
 
       expect(mountain).to be_kind_of(Hash)
       expect(mountain).to_not be_kind_of(Array)
-      binding.pry
+
       expect(mountain["name"]).to eq "Steamboat Springs 2"
       expect(mountain["address"]).to eq "1 Mountain Rd"
       expect(mountain["city"]).to eq "Steamboat Springs"
