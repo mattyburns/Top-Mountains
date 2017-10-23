@@ -11,10 +11,12 @@ const ReviewIndex = props => {
   //   )
   // })
   return(
-    <h1>Review Index</h1>
-    // <ul>
-    //   {reviews}
-    // </ul>
+    <div>
+
+      <h1>Review Index</h1>
+      <ReviewTile/>
+
+    </div>
   );
 }
 

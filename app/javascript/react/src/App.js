@@ -1,18 +1,15 @@
 import React from 'react';
-import AppContainer from './AppContainer'
+import { Router, browserHistory, Route, IndexRoute } from 'react-router';
+import MountainIndexContainer from './MountainIndexContainer';
+import MountainShowReviewsContainer from './MountainShowReviewsContainer';
 
-class App extends React.Component{
- constructor(props) {
-   super(props);
- }
-  render() {
-
-    return(
-      <div>
-      <h1>App</h1>
-        <AppContainer />
-      </div>
-    )
-  }
+const App = props => {
+  return(
+    <Router history={browserHistory}>
+      <Route path="/" component={MountainIndexContainer} />
+      <Route exact path="/mountains/:id" component={MountainShowReviewsContainer}/>
+    </Router>
+  )
 }
-export default App
+
+export default App;

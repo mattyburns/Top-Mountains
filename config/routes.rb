@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root "mountains#index"
   devise_for :users, :controllers => { :registrations => :registrations}
 
+  resources :mountains
+
   resources :mountains do
     resources :reviews, except: [:index, :show]
   end
