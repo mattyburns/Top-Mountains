@@ -16,7 +16,11 @@ class AppContainer extends React.Component{
  }
 
  componentDidMount() {
-   fetch('/api/v1/user/is_signed_in')
+   fetch('/api/v1/user/is_signed_in',{
+     credentials: 'same-origin',
+     method: 'GET',
+     headers: {'Content-Type': 'application/json'}
+   })
      .then(response => response.json())
      .then(body => {
        let user = body.user;
@@ -51,9 +55,10 @@ class AppContainer extends React.Component{
 
     return(
       <div>
-      <h3>App Container</h3>
+        <h3>App Container</h3>
         <MountainFormContainer
-        addNewMountain={this.addNewMountain}/>
+          addNewMountain={this.addNewMountain}
+          currentUser = {this.state.currentUser}/>
 
         <ReviewFormContainer
         addNewReview={this.addNewReview} />
