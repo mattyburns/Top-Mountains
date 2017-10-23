@@ -6,6 +6,34 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+user_list = [
+  {username: "Userguy2323",
+    email: "userguy@aol.com",
+    password: "passwordguy",
+    role: "member"
+  },
+  {username: "adminbuddy",
+    email: "adminguy@gmail.com",
+    password: "imsospecial",
+    role: "admin"
+  },
+  {username: "userlady",
+    email: "fancylady@ladies.com",
+    password: "oohlala123",
+    role: "member"
+  },
+  {username: "greatseed",
+    email: "seed@seed.com",
+    password: "seeeeeeeed1",
+    role: "member"
+  }
+]
+
+user1 = User.create(user_list[0])
+user2 = User.create(user_list[1])
+user3 = User.create(user_list[2])
+user4 = User.create(user_list[3])
+
 mountain_list = [
   {
     name: "Stowe",
@@ -51,34 +79,7 @@ mountain1 = Mountain.create(mountain_list[0])
 mountain2 = Mountain.create(mountain_list[1])
 mountain3 = Mountain.create(mountain_list[2])
 mountain4 = Mountain.create(mountain_list[3])
-mountain1 = Mountain.create(mountain_list[4])
+mountain5 = Mountain.create(mountain_list[4])
 
-user_list = [
-  {username: "Userguy2323",
-    email: "userguy@aol.com",
-    password: "passwordguy",
-    role: "member"
-  },
-  {username: "adminbuddy",
-    email: "adminguy@gmail.com",
-    password: "imsospecial",
-    role: "admin"
-  },
-  {username: "userlady",
-    email: "fancylady@ladies.com",
-    password: "oohlala123",
-    role: "member"
-  },
-  {username: "greatseed",
-    email: "seed@seed.com",
-    password: "seeeeeeeed1",
-    role: "member"
-  }
-]
-
-user1 = User.create(user_list[0])
-user2 = User.create(user_list[1])
-user3 = User.create(user_list[2])
-user4 = User.create(user_list[3])
 
 Review.create(user_id: 1, mountain_id: 1, rating: 5)

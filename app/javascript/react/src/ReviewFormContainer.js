@@ -60,7 +60,7 @@ class ReviewFormContainer extends Component {
       return false;
     }
 
-    this.handleReviewSubmitForm()
+    this.handleReviewSubmitForm(event)
     this.handleClearForm(event)
   }
 
@@ -77,7 +77,7 @@ class ReviewFormContainer extends Component {
 
 
   render() {
-    let validateSubmit = (event) => this.validateSubmit(event)
+    let handleSubmit = (event) => this.validateSubmit(event)
     let errors;
     if(this.state.errors.length) {
     errors = <ErrorBox errors={this.state.errors} />
@@ -117,7 +117,7 @@ class ReviewFormContainer extends Component {
         <div>
           {errors}
         </div>
-        <input type="submit" className="button" value="Submit " onClick={this.validateSubmit} />
+        <input type="submit" className="button" value="Submit " onClick={handleSubmit} />
       </form>
     )
   }

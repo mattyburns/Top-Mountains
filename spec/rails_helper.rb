@@ -1,20 +1,17 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-require 'spec_helper'
-require 'warden'
+require File.expand_path('../../config/environment', __FILE__)
+require "spec_helper"
+require "rspec/rails"
+require "capybara/rails"
+require "warden"
+require "devise"
+require "valid_attribute"
 
 include Warden::Test::Helpers
 
-RSpec.configure do |config|
-  config.after :each do
-    Warden.test_reset!
-  end
-end
-
 ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
-require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -58,16 +55,15 @@ RSpec.configure do |config|
   #
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.after :each do
+      Warden.test_reset!
+    end
   config.infer_spec_type_from_file_location!
 
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-end
-require "capybara/rails"
-require "valid_attribute"
-
-RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
 end

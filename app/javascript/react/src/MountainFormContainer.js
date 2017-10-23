@@ -56,6 +56,10 @@ class MountainFormContainer extends Component {
       errors.push("Zip code field can't be blank. ")
     }
 
+    if (!/([0-9])\d{4}/.test(this.state.zip)){
+      errors.push("Zip code must be 5 digits. ")
+    }
+
 
     this.setState({errors: errors})
 
@@ -85,13 +89,12 @@ class MountainFormContainer extends Component {
         return false;
       }
 
-      this.handleReviewSubmitForm()
+      this.handleMountainSubmitForm(event)
       this.handleClearForm(event)
     }
 
 
   handleMountainSubmitForm(event){
-    console.log(this.state)
     event.preventDefault();
     let mountainPayload = {
       name: this.state.name,
@@ -99,14 +102,15 @@ class MountainFormContainer extends Component {
       city: this.state.city,
       state: this.state.state,
       zip: this.state.zip,
-      imageUrl: this.state.imageUrl
+      imageUrl: this.state.imageUrl,
+      creatorId: this.props.currentUser.id
     }
     this.props.addNewMountain(mountainPayload);
   }
 
 
   render() {
-    let validateSubmit = (event) => this.validateSubmit(event)
+    let handleSubmit = (event) => this.validateSubmit(event)
     let errors;
     if(this.state.errors.length) {
      errors = <ErrorBox errors={this.state.errors} />
@@ -164,7 +168,7 @@ class MountainFormContainer extends Component {
         </div>
 
 
-        <input type="submit" className="button" value="Submit " onClick={this.validateSubmit} />
+        <input type="submit" className="button" value="Submit " onClick={handleSubmit} />
       </form>
     )
   }
