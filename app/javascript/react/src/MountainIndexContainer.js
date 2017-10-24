@@ -14,24 +14,22 @@ class MountainIndexContainer extends React.Component{
  }
 
  componentDidMount() {
-   fetch('/api/v1/user/is_signed_in')
+   fetch('/api/v1/user/is_signed_in.json', {
+     credentials: 'same-origin',
+     method: 'GET',
+     headers: { 'Content-Type': 'application/json' }
+   })
      .then(response => response.json())
      .then(body => {
-       let user = body.user;
-       this.setState({currentUser: user })
+       this.setState({ currentUser: body.user })
      })
+
+   fetch('http://localhost:3000/api/v1/mountains')
+    .then(response => response.json())
+    .then (body => {
+      this.setState({ mountains: body.mountains })
+    })
  }
-
- // componentDidMount() {
- //   fetch('/api/v1/mountains')
- //    .then(response => response.json())
- //    .then (body => {
- //      let mountains = body.mountains;
- //      this.setState({mountains: mountains})
- //    })
- //
- // }
-
 
  addNewMountain(payLoad) {
    fetch('/api/v1/mountains', {
@@ -46,6 +44,7 @@ class MountainIndexContainer extends React.Component{
 
 
   render() {
+    console.log(this.state)
     let addNewMountain = (payLoad) => this.addNewMountain(payLoad)
 
     return(
@@ -54,7 +53,9 @@ class MountainIndexContainer extends React.Component{
         <HeaderTile title="Top Mountains"/>
 
         <MountainFormContainer
-          addNewMountain={this.addNewMountain}/>
+          addNewMountain={this.addNewMountain}
+          formCurrentUser={this.state.currentUser}
+        />
 
         <MountainIndex
           mountains={this.state.mountains}

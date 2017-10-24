@@ -2,7 +2,9 @@ import React from 'react';
 
 const MountainTile = props => {
   let blankOrDelete = ""
-  if (props.currentUser.admin === true) {
+  if (props.currentUser === undefined) {
+    blankOrDelete = "blank"
+  } else if (props.currentUser.admin === true) {
     blankOrDelete = "delete"
   } else if (props.currentUser.id === props.reviews.user_id) {
     blankOrDelete = "delete"
@@ -24,7 +26,7 @@ const MountainTile = props => {
       </a>
 
       <button className={`${blankOrDelete}`} type="button">Delete</button>
-      
+
     </div>
   )
 }

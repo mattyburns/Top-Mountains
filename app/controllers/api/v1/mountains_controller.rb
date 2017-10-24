@@ -1,8 +1,10 @@
 class Api::V1::MountainsController < ApplicationController
   skip_before_action :verify_authenticity_token
+  protect_from_forgery unless: -> { request.format.json? }
 
   def index
     mountains = Mountain.all
+    current_user = user_signed_in?
     mountains_sorted_by_rating = mountains.sort_by{|mountain| mountain.rating}.reverse
     render json: mountains_sorted_by_rating
     # render :json => {"mountain" => mountains_sorted_by_rating}.to_json()
@@ -24,7 +26,7 @@ class Api::V1::MountainsController < ApplicationController
       image_url: mountain["imageUrl"],
       creator_id: mountain["creatorId"]
     )
-    render :json => {"mountain" => new_mountain}.to_json()
+    render :json => {"mountain" => new_mountain}
   end
 
 end
