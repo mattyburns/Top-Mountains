@@ -68,8 +68,15 @@ class Mountain < ApplicationRecord
   validates :address, presence: true
   validates :state,
     presence: true,
-    inclusion: { in: STATES.map { |state| state[1] } }
-  validates :zip, presence: true, length: { is: 5}
+    inclusion: { in: STATES.map { |state| state[0] } }
+  validates :zip, numericality: true, presence: true, length: { is: 5}
 
+  def self.search(search)
+    if search
+      find(:all, :conditions =>['name LIKE ?', "%#{search}"])
+    else
+      Mountain.all
+    end
+  end
 
 end

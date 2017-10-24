@@ -1,5 +1,5 @@
 class MountainsController < ApplicationController
   def index
-    @mountains = Mountain.all
+    @mountains = Mountain.search(params[:search])
   end
 end
