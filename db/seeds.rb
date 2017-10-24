@@ -29,17 +29,16 @@ user_list = [
   }
 ]
 
-user1 = User.create(user_list[0])
-user2 = User.create(user_list[1])
-user3 = User.create(user_list[2])
-user4 = User.create(user_list[3])
+user_list.each do |user|
+  User.create(user)
+end
 
 mountain_list = [
   {
     name: "Stowe",
-    address: "7412 Moiuntain Rd",
+    address: "7412 Mountain Rd",
     city: "Stowe",
-    state: "Vermont",
+    state: "VT",
     zip: "05672",
     creator_id: 1
   },
@@ -47,7 +46,7 @@ mountain_list = [
     name: "Other Stowe",
     address: "12 Other Stowe St.",
     city: "OhYeah",
-    state: "Vermont",
+    state: "VT",
     zip: "23456",
     creator_id: 2
   },
@@ -55,31 +54,29 @@ mountain_list = [
     name: "Big Scary Mountain",
     address: "OhhhhNooooo St",
     city: "Scarymountainville",
-    state: "Rhode Island",
+    state: "RI",
     zip: "12345",
     creator_id: 3
   },
   {name: "Mount Mountain",
     address: "Mountain st",
     city: "Mountainia",
-    state: "Colorado",
+    state: "CO",
     zip: "65432",
     creator_id: 4
   },
   {name: "Space Mountain",
     address: "Disney St",
     city: "Orlando",
-    state: "Florida",
+    state: "FL",
     zip: "98765",
     creator_id: 1
     }
 ]
 
-mountain1 = Mountain.create(mountain_list[0])
-mountain2 = Mountain.create(mountain_list[1])
-mountain3 = Mountain.create(mountain_list[2])
-mountain4 = Mountain.create(mountain_list[3])
-mountain5 = Mountain.create(mountain_list[4])
+mountain_list.each do |mountain|
+  Mountain.create(mountain)
+end
 
 
 Review.create(user_id: 1, mountain_id: 1, rating: 5)
