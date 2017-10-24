@@ -44,7 +44,6 @@ class MountainIndexContainer extends React.Component{
 
 
   render() {
-    console.log(this.state)
     let addNewMountain = (payLoad) => this.addNewMountain(payLoad)
 
     return(

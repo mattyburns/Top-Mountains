@@ -6,10 +6,13 @@ const MountainTile = props => {
     blankOrDelete = "blank"
   } else if (props.currentUser.admin === true) {
     blankOrDelete = "delete"
-  } else if (props.currentUser.id === props.reviews.user_id) {
-    blankOrDelete = "delete"
-  } else {
-    blankOrDelete = "blank"
+  } else if (props.currentUser.admin != true && props.currentUser.id != null) {
+    if (props.mountain.creator_id === props.currentUser.id) {
+      blankOrDelete = "delete"
+    }
+    else {
+      blankOrDelete = "blank"
+    }
   }
 
   return(
@@ -25,7 +28,7 @@ const MountainTile = props => {
         <img src={`${props.mountain.image_url}`} alt={`Picture of ${props.mountain.name}`}/>
       </a>
 
-      <button className={`${blankOrDelete}`} type="button">Delete</button>
+      <button id="button" className={`${blankOrDelete}`} type="button">Delete</button>
 
     </div>
   )

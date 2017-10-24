@@ -7,6 +7,7 @@ const MountainIndex = props => {
         <MountainTile
           key={mountain.id}
           mountain={mountain}
+          currentUser={props.currentUser}
         />
     )
   })
