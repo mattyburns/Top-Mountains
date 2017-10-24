@@ -22,6 +22,17 @@ class MountainIndexContainer extends React.Component{
      })
  }
 
+ // componentDidMount() {
+ //   fetch('/api/v1/mountains')
+ //    .then(response => response.json())
+ //    .then (body => {
+ //      let mountains = body.mountains;
+ //      this.setState({mountains: mountains})
+ //    })
+ //
+ // }
+
+
  addNewMountain(payLoad) {
    fetch('/api/v1/mountains', {
      method: 'POST',
@@ -45,7 +56,10 @@ class MountainIndexContainer extends React.Component{
         <MountainFormContainer
           addNewMountain={this.addNewMountain}/>
 
-        <MountainIndex />
+        <MountainIndex
+          mountains={this.state.mountains}
+          currentUser={this.state.currentUser}
+        />
       </div>
     )
   }

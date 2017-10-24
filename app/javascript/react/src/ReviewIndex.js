@@ -2,20 +2,19 @@ import React from 'react';
 import ReviewTile from './ReviewTile'
 
 const ReviewIndex = props => {
-  // let reviews = props.reviews.map(review => {
-  //   return(
-  //     <ReviewTile
-  //       // key = {review}
-  //       // review = {review}
-  //     />
-  //   )
-  // })
+  let reviews = props.reviews.map(review => {
+    return(
+      <ReviewTile
+        key={review.id}
+        review={review}
+      />
+    )
+  })
   return(
     <div>
-
-      <h1>Review Index</h1>
-      <ReviewTile/>
-
+      <ul>
+        {reviews}
+      </ul>
     </div>
   );
 }

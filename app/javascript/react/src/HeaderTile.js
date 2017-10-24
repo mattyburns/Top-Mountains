@@ -4,7 +4,7 @@ const HeaderTile = props => {
   return(
 <div>
 
-  <h1 class="title">{props.title}</h1>
+  <h1 className="title">{props.title}</h1>
 
 
 </div>

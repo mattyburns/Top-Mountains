@@ -23,6 +23,17 @@ class MountainShowReviewsContainer extends React.Component{
      })
  }
 
+
+ // componentDidMount() {
+ //   fetch('/api/v1/mountains/:id')
+ //    .then(response => response.json())
+ //    .then (body => {
+ //      let reviews = body.reviews;
+ //      this.setState({reviews: reviews})
+ //    })
+ //
+ // }
+
  addNewReview(payLoad) {
   fetch('/api/v1/reviews', {
     method: 'POST',
@@ -44,7 +55,10 @@ class MountainShowReviewsContainer extends React.Component{
         <ReviewFormContainer
           addNewReview={this.addNewReview} />
 
-        <ReviewIndex />
+        <ReviewIndex
+          reviews={this.state.reviews}
+          currentUser={this.state.currentUser}
+        />
       </div>
     )
   }

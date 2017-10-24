@@ -1,14 +1,32 @@
 import React from 'react';
 
-const MountianTile = props => {
+const MountainTile = props => {
+  let blankOrDelete = ""
+  if (props.currentUser.admin === true) {
+    blankOrDelete = "delete"
+  } else if (props.currentUser.id === props.reviews.user_id) {
+    blankOrDelete = "delete"
+  } else {
+    blankOrDelete = "blank"
+  }
+
   return(
+    <div>
+      <div>
+        <h3>{props.mountain.name}</h3>
+      </div>
+      <div>
+        <p>{props.mountain.city}, {props.mountain.state}</p>
+      </div>
 
-    <h3>Mountain Tile</h3>
+      <a href={`/mountains/${props.mountain.id}`}>
+        <img src={`${props.mountain.image_url}`} alt={`Picture of ${props.mountain.name}`}/>
+      </a>
 
-    // <li>{props.mountain}</li>
-
+      <button className={`${blankOrDelete}`} type="button">Delete</button>
+      
+    </div>
   )
-
 }
 
-export default MountianTile;
+      export default MountainTile;
