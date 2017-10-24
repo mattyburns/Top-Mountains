@@ -13,7 +13,9 @@ class Admin::UsersController < ApplicationController
   end
 
   def require_admin
-    unless current_user.admin == true
+    if !user_signed_in?
+      redirect_to root_path
+    elsif user_signed_in? == true && current_user.admin == false
       redirect_to root_path
     end
   end
