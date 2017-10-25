@@ -1,16 +1,20 @@
 class Api::V1::UpvoteController < ApplicationController
-  skip_before_action :verify_autheticity_token
+  skip_before_action :verify_authenticity_token
 
   def create
-    upvote = JSON.parse(request.body.read)
-    new_upvote = Upvote.create(
-      user_id: upvote["userId"],
-      review_id: upvote["reviewId"]
-      vote: upvote["vote"]
+    vote = JSON.parse(request.body.read)
+    new_vote = Upvote.create(
+      user_id: vote["userId"],
+      review_id: vote["reviewId"],
+      vote: vote["vote"]
     )
-
-    render json: new_upvote
+    render json: new_vote
   end
 
-
+  def update
+    vote = Upvote.find(params["id"])
+    new_vote = JSON.parse(request.body.read)
+    vote.vote = new_vote["vote"]
+    render json: vote
+  end
 end
