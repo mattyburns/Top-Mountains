@@ -83,8 +83,8 @@ RSpec.describe Api::V1::MountainsController, type: :controller do
         city: "Steamboat Springs",
         state: "CO",
         zip: "98945",
-        imageUrl: "www.Steamboat.com",
-        creatorId: skibuddy.id
+        image_url: "www.Steamboat.com",
+        creator_id: skibuddy.id
       }.to_json
 
       expect{ post(:create, body: post_json)}.to change{ Mountain.count }.by 1
@@ -97,8 +97,8 @@ RSpec.describe Api::V1::MountainsController, type: :controller do
         city: "Steamboat Springs",
         state: "CO",
         zip: "98945",
-        imageUrl: "www.Steamboat.com",
-        creatorId: skibuddy.id
+        image_url: "www.Steamboat.com",
+        creator_id: skibuddy.id
       }.to_json
 
       post(:create, body: post_json)
