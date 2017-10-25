@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const MountainTile = props => {
   let blankOrDelete = ""
@@ -24,9 +25,9 @@ const MountainTile = props => {
         <p className="location">{props.mountain.city}, {props.mountain.state}</p>
       </div>
 
-      <a href={`/mountains/${props.mountain.id}`}>
+      <Link to= {`/mountains/${props.mountain.id}`}>
         <img src={`${props.mountain.image_url}`} alt={`Picture of ${props.mountain.name}`}/>
-      </a>
+      </Link>
 
       <button id="button" className={`${blankOrDelete}`} type="button">Delete</button>
 
