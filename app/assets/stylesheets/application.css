@@ -158,13 +158,13 @@ select {
   padding: 0px;
   margin: 0px;
   border: none;
-  float: inherit;
-  align-items: center;
-  font-family: 'Source Sans Pro', sans-serif
+  float: left;
+  align-items: left;
+  white-space: nowrap;
 }
 
-.sign-in{
-  float: inherit;
+.sign-in {
+  float:right;
   text-align: right;
   align-items: center;
   font-family: 'Source Sans Pro', sans-serif
@@ -235,4 +235,27 @@ select {
   position: relative;
   top: 2px;
   left: 2px;
+}
+
+#button.delete {
+  border: none;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: thin solid #e7e7e7;
+}
+
+#button.delete:hover {
+  background-color: #9fbcdb;
+}
+.blank {
+  display: none;
 }

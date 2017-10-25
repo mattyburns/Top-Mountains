@@ -18,6 +18,6 @@ feature 'sign out' , %{
 
     expect(page).to have_content("Signed out successfully.")
     expect(page).to have_content("Sign In")
-    expect(page).to have_content("Mountains") #This will need to change when we have more pages
+    expect(page.html).to have_content("This is the main site")
   end
 end

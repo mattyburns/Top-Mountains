@@ -79,4 +79,12 @@ class Mountain < ApplicationRecord
     end
   end
 
+  def rating
+    if reviews.empty?
+      0
+    else
+      reviews.reduce(0) {|sum, review| sum += review.rating} / reviews.count.to_f
+    end
+  end
+
 end

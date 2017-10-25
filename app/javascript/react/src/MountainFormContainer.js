@@ -24,6 +24,7 @@ class MountainFormContainer extends Component {
     this.validateSubmit = this.validateSubmit.bind(this);
   }
 
+
   handleChange(event){
     let field = event.target.name
     let newValue = event.target.value
@@ -103,8 +104,8 @@ class MountainFormContainer extends Component {
       city: this.state.city,
       state: this.state.state,
       zip: this.state.zip,
-      imageUrl: this.state.imageUrl,
-      creatorId: this.props.currentUser.id
+      image_url: this.state.imageUrl,
+      creator_id: this.props.formCurrentUser.id
     }
     this.props.addNewMountain(mountainPayload);
   }

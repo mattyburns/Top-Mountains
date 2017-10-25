@@ -20,7 +20,7 @@ feature 'sign in' , %{
     click_button 'Log In'
     expect(page).to have_content("Signed in successfully.")
     expect(page).to have_content("Sign Out")
-    expect(page).to have_content("Mountains")
+    expect(page.html).to have_content("This is the main site")
   end
 
   scenario 'user does not provide valid log in credentials' do
@@ -32,6 +32,7 @@ feature 'sign in' , %{
     click_button 'Log In'
     expect(page).to have_content("Invalid Email or password.")
     expect(page).to have_content("Log in")
+    expect(page.html).not_to have_content("This is the main site")
   end
 
 end

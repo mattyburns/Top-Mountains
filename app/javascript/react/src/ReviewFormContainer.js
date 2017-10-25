@@ -73,12 +73,13 @@ class ReviewFormContainer extends Component {
   }
 
   handleReviewSubmitForm(event){
-    console.log(this.state)
     let reviewPayload = {
       rating: this.state.rating,
       skiingReview: this.state.skiingReview,
       foodReview: this.state.foodReview,
       lodgingReview: this.state.lodgingReview,
+      userId: this.props.formCurrentUser.id,
+      mountainId: this.props.currentMountain.id
     }
     this.props.addNewReview(reviewPayload);
   }
