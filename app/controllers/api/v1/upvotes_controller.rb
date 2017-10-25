@@ -1,4 +1,4 @@
-class Api::V1::UpvoteController < ApplicationController
+class Api::V1::UpvotesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create
