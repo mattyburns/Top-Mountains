@@ -16,14 +16,14 @@ const ReviewTile = props => {
   }
 
   return(
-    <div>
+    <div className="site-tile">
 
       <p>Rating: {props.rating}</p>
       <p>Skiing Review: {props.skiingReview}</p>
       <p>Food Review: {props.foodReview}</p>
       <p>Lodging Review: {props.lodgingReview}</p>
 
-      
+
       <li>
         <button className="button" type="button">Upvote</button>
         <button className="button" type="button">Downvote</button>

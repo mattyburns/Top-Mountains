@@ -9,11 +9,6 @@
   </div>
 
   <div class="field">
-    <%= f.label :profile_pic_url, "Change Profile Picture" %><br />
-    <%= f.text_field :profile_pic_url %>
-  </div>
-
-  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
@@ -42,7 +37,7 @@
       <%= f.check_box :remove_avatar %>
     <% end %>
   <% end %>
-  <%= f.file_field :avatar, :class => 'button'%>
+  <%= f.file_field :avatar %>
   <%= f.hidden_field :avatar_cache %>
 
   <div class="field">

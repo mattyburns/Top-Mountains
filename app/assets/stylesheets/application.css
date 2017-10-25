@@ -26,8 +26,13 @@ body {
 
 }
 
-p {
-  background-color: #ededed;
+h2 {
+margin-top: 5px;
+margin-bottom: 5px;
+}
+
+img {
+  width: 80%;
 }
 
 nav {
@@ -55,15 +60,44 @@ a:hover{
 }
 
 form{
-  width: 25%;
   font-size: .75em;
   background-color: #ededed;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 5px;
-  padding-top: 1px;
-  margin: 2rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
 
+.site-view{
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-gap: 10px;
+  color: #444;
+  margin: 10px;
+}
+.site-form{
+
+}
+
+.site-index{
+
+  margin-right: 10px;
+}
+
+.site-tile{
+  align-self: left;
+  padding: 10px;
+  margin-bottom: 10px;
+
+
+  background-color: #ededed;
+}
+
+.site-tile a {
+  color: black;
+}
+.site-tile a:hover {
+  color: grey;
 }
 
 .title {

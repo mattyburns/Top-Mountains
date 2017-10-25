@@ -53,19 +53,22 @@ class MountainShowReviewsContainer extends React.Component{
       <div>
 
         <HeaderTile title ={this.state.mountain.name}/>
-
+        <div class="site-view">
+        <div class="site-form">
         <ReviewFormContainer
           addNewReview={this.addNewReview}
           formCurrentUser={this.state.currentUser}
           currentMountain={this.state.mountain}
         />
-
-        
+        </div>
+        <div class="site-index">
         <ReviewIndex
           reviews={this.state.reviews}
           currentUser={this.state.currentUser}
         />
       </div>
+    </div>
+    </div>
     )
   }
 }

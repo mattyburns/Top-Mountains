@@ -119,8 +119,8 @@ class MountainFormContainer extends Component {
    }
 
     return (
-      <form className="callout" id="mountain-form">
-        <h2>Create A Mountain</h2>
+      <form className="callout" id="site-form">
+        
 
         <FormItem
           name="name"
