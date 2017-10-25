@@ -10,22 +10,26 @@ user_list = [
   {username: "Userguy2323",
     email: "userguy@aol.com",
     password: "passwordguy",
-    role: "member"
+    role: "member",
+    admin: false
   },
   {username: "adminbuddy",
     email: "adminguy@gmail.com",
     password: "imsospecial",
-    role: "admin"
+    role: "admin",
+    admin: true
   },
   {username: "userlady",
     email: "fancylady@ladies.com",
     password: "oohlala123",
-    role: "member"
+    role: "member",
+    admin: false
   },
   {username: "greatseed",
     email: "seed@seed.com",
     password: "seeeeeeeed1",
-    role: "member"
+    role: "member",
+    admin: false
   }
 ]
 

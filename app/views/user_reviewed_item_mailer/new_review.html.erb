@@ -1,0 +1,8 @@
+<p>Hello <%= @user.username %>,</p>
+
+<p><%= @review.user.username %> has left a new review for the mountain you created, <%= @mountain.name %>!</p>
+
+<p>Go check it out here: <%= link_to "#{@mountain.name}", @mountain.id %></p>
+
+<p>Cold hands, but warm wishes,<br />
+The Gondolavelopers</p>
