@@ -17,11 +17,11 @@ const MountainTile = props => {
 
   return(
     <div>
-      <div>
-        <h3>{props.mountain.name}</h3>
+      <div className="mountain-tile">
+        <h3 className="mountain-name">{props.mountain.name}</h3>
       </div>
       <div>
-        <p>{props.mountain.city}, {props.mountain.state}</p>
+        <p className="location">{props.mountain.city}, {props.mountain.state}</p>
       </div>
 
       <a href={`/mountains/${props.mountain.id}`}>
@@ -34,4 +34,4 @@ const MountainTile = props => {
   )
 }
 
-      export default MountainTile;
+export default MountainTile;

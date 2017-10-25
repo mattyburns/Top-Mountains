@@ -24,15 +24,15 @@ class MountainShowReviewsContainer extends React.Component{
  }
 
 
- // componentDidMount() {
- //   fetch('/api/v1/mountains/:id')
- //    .then(response => response.json())
- //    .then (body => {
- //      let reviews = body.reviews;
- //      this.setState({reviews: reviews})
- //    })
- //
- // }
+ componentDidMount() {
+   fetch('/api/v1/mountains/:id')
+    .then(response => response.json())
+    .then (body => {
+      let reviews = body.reviews;
+      this.setState({reviews: reviews})
+    })
+
+ }
 
  addNewReview(payLoad) {
   fetch('/api/v1/reviews', {

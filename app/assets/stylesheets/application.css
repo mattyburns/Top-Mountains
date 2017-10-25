@@ -188,6 +188,9 @@ select {
   border: thin solid #e7e7e7;
 }
 
+#button.delete:hover {
+  background-color: #9fbcdb;
+}
 .blank {
   display: none;
 }

@@ -23,10 +23,10 @@ class Api::V1::MountainsController < ApplicationController
       city: mountain["city"],
       state: mountain["state"],
       zip: mountain["zip"],
-      image_url: mountain["imageUrl"],
-      creator_id: mountain["creatorId"]
+      image_url: mountain["image_url"],
+      creator_id: mountain["creator_id"]
     )
-    render :json => {"mountain" => new_mountain}
+    render json: new_mountain
   end
 
 end
