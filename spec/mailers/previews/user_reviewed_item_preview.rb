@@ -1,7 +1,7 @@
 # Preview all emails at http://localhost:3000/rails/mailers/user_reviewed_item
 class UserReviewedItemPreview < ActionMailer::Preview
-  def new_review
+  def email_mountain_creator
     review = Review.last
-    UserReviewedItemMailer.new_review(review)
+    UserReviewedItemMailer.email_mountain_creator(review)
   end
 end

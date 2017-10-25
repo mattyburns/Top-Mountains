@@ -1,6 +1,6 @@
 class UserReviewedItemMailer < ApplicationMailer
   default from: "gondolavelopers@gmail.com"
-  def new_review(review)
+  def email_mountain_creator(review)
     @review = review
     @mountain = @review.mountain
     @user = @mountain.creator
