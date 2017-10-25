@@ -4,11 +4,11 @@ class Api::V1::ReviewsController < ApplicationController
     review = JSON.parse(request.body.read)
     new_review = Review.create(
       rating: review["rating"],
-      skiing_review: review["skiingReview"],
-      food_review: review["foodReview"],
-      lodging_review: review["lodgingReview"],
-      user_id: review["userId"],
-      mountain_id: review["mountainId"]
+      skiing_review: review["skiing_review"],
+      food_review: review["food_review"],
+      lodging_review: review["lodging_review"],
+      user_id: review["user_id"],
+      mountain_id: review["mountain_id"]
     )
     render json: new_review
   end
