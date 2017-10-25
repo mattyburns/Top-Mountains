@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FormItem from './FormItem'
+import TextAreaFormItem from './TextAreaFormItem'
 import DropDown from './DropDown'
 import ErrorBox from './ErrorBox'
 
@@ -118,47 +119,47 @@ class MountainFormContainer extends Component {
 
     return (
       <form className="callout" id="mountain-form">
-        <h4>Mountain Form</h4>
+        <h2>Create A Mountain</h2>
 
         <FormItem
           name="name"
           content={this.state.name}
-          nameText="Name:"
+          nameText="Mountain Name"
           handler={this.handleChange}
         />
 
         <FormItem
           name="address"
           content={this.state.address}
-          nameText="Address:"
+          nameText="Address"
           handler={this.handleChange}
         />
 
         <FormItem
           name="city"
           content={this.state.city}
-          nameText="City:"
+          nameText="City"
           handler={this.handleChange}
         />
 
         <DropDown
           name="state"
           content={this.state.state}
-          nameText="State:"
+          nameText="State"
           handler={this.handleChange}
         />
 
         <FormItem
           name="zip"
           content={this.state.zip}
-          nameText="Zip Code:"
+          nameText="Zip Code"
           handler={this.handleChange}
         />
 
         <FormItem
           name="imageUrl"
           content={this.state.imageUrl}
-          nameText="Image Url:"
+          nameText="Image Url"
           handler={this.handleChange}
         />
 

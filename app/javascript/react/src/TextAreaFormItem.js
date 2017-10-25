@@ -1,11 +1,12 @@
 import React from 'react';
 
-const FormItem = props => {
+const TextAreaFormItem = props => {
   return(
 
 <div>
   <label name={props.name}>{props.nameText}</label><br></br>
-  <input type="text"
+  <textarea
+    rows="4"
     id={props.name}
     value={props.content}
     name={props.name}
@@ -16,4 +17,4 @@ const FormItem = props => {
 
 }
 
-export default FormItem;
+export default TextAreaFormItem;

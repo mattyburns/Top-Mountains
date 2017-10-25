@@ -22,8 +22,12 @@
 body {
   font-family: 'Source Sans Pro', sans-serif;
   margin: 0px;
-  background-color: #9fbcdb;
+  background-color: white;
 
+}
+
+p {
+  background-color: #ededed;
 }
 
 nav {
@@ -38,6 +42,7 @@ nav {
   margin-left: none;
   margin-right: none;
   vertical-align:  middle;
+  white-space: nowrap;
 }
 
 a {
@@ -50,7 +55,7 @@ a:hover{
 }
 
 form{
-  width: 50%;
+  width: 25%;
   font-size: .75em;
   background-color: #ededed;
   padding-left: 1rem;
@@ -58,10 +63,7 @@ form{
   padding-bottom: 5px;
   padding-top: 1px;
   margin: 2rem;
-  border-style: solid;
-  border-width: thin;
-  border-color: #729bc8;
-  border-radius: 10px;
+
 }
 
 .title {
@@ -73,11 +75,11 @@ form{
   font-size: 4rem;
   text-shadow: 3px 3px black;
   background-image: url(http://www.ospreypacks.com/stories/wp-content/uploads/2012/04/g19.jpg);
-  background-position: 0 -3rem;
+  background-position: 0 0rem;
   background-size: cover;
   border-style: solid;
-  border-width: 0px 0px 0px 0px;
-  border-color: #729bc8;
+  border-width: 0px 0px 5px 0px;
+  border-color: black;
 }
 
 .button {
@@ -99,33 +101,29 @@ form{
   background-color: #9fbcdb;
 }
 
-.actions {
-    border: none;
-    color: white;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-    background-color: white;
-    color: black;
-    border: thin solid #e7e7e7;
-}
-.actions:hover {
-  background-color: #9fbcdb;
-}
+
 /*input[type=text]:focus {
   width: 25%;
 }*/
 
+
 input[type=text] {
-    width: 75px;
+    width: 100%;
     box-sizing: border-box;
-    border: thin solid #ccc;
-    border-radius: 4px;
+    border: none solid #ccc;
+    border-radius: 0px;
+    background-color: white;
+    margin: 2px 2px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+textarea {
+    width: 100%;
+    resize: none;
+    box-sizing: border-box;
+    border: none solid #ccc;
+    border-radius: 0px;
     background-color: white;
     margin: 2px 2px;
     -webkit-transition: width 0.4s ease-in-out;
@@ -136,37 +134,105 @@ input[type=text] {
 select {
   border-width: thin;
   background-color: white;
-  border-radius: 4px;
+  border-radius: 0px;
   font-family: 'Source Sans Pro', sans-serif;
   }
 
 
 .container{
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 40% 20% 20% 20%;
   div{
 
   }
 
 }
+select {
+  width: 100%;
+}
 
 .search-bar {
   background-color: black;
   box-sizing:border-box;
-  width: 50px;
+  width: 40%;
   padding: 0px;
   margin: 0px;
   border: none;
-  float: left;
-  align-items: left;
+  float: inherit;
+  align-items: center;
+  font-family: 'Source Sans Pro', sans-serif
 }
 
 .sign-in{
-  float:right;
+  float: inherit;
   text-align: right;
+  align-items: center;
+  font-family: 'Source Sans Pro', sans-serif
 }
 
 .home{
-  float: center;
+  font-family: 'Lobster', cursive;
+  float: inherit;
   text-align: center;
+  align-items: center;
+}
+.flasherror{
+  float: inherit;
+  text-align: center;
+  align-items: center;
+  color: white;
+}
+
+.avatar {
+  margin: 1em;
+  padding: 5px;
+  background: white;
+  border-width: thin;
+  border-style: solid;
+  border-color: white;
+}
+
+.rate-area {
+  float: left;
+  border-style: none;
+}
+
+.rate-area:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+  clip: rect(0,0,0,0);
+}
+
+.rate-area:not(:checked) > label {
+  float: right;
+  width: 1em;
+  padding: 0 .1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 1.5em;
+  line-height: 1.2;
+  color: lightgrey;
+  text-shadow: 1px 1px #bbb;
+}
+
+.rate-area:not(:checked) > label:before { content: '★ '; }
+
+.rate-area > input:checked ~ label {
+  color: gold;
+  text-shadow: 1px 1px #c60;
+  font-size: 1.5em !important;
+}
+
+.rate-area:not(:checked) > label:hover, .rate-area:not(:checked) > label:hover ~ label { color: gold; }
+
+.rate-area > input:checked + label:hover, .rate-area > input:checked + label:hover ~ label, .rate-area > input:checked ~ label:hover, .rate-area > input:checked ~ label:hover ~ label, .rate-area > label:hover ~ input:checked ~ label {
+  color: gold;
+  text-shadow: 1px 1px goldenrod;
+}
+
+.rate-area > label:active {
+  position: relative;
+  top: 2px;
+  left: 2px;
 }

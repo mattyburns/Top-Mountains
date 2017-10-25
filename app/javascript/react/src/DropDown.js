@@ -63,7 +63,7 @@ const DropDown = props => {
   return(
 
 <div>
-  <label name={props.name}>{props.nameText}</label>
+  <label name={props.name}>{props.nameText}</label><br></br>
   <select onChange={props.handler} name={props.name}>
     {stateOptions}
   </select>

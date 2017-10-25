@@ -42,7 +42,7 @@
       <%= f.check_box :remove_avatar %>
     <% end %>
   <% end %>
-  <%= f.file_field :avatar %>
+  <%= f.file_field :avatar, :class => 'button'%>
   <%= f.hidden_field :avatar_cache %>
 
   <div class="field">
@@ -51,12 +51,12 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", :class => 'button'  %>
   </div>
 <% end %>
 
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => 'button'  %></p>
 
 <%= link_to "Back", :back %>

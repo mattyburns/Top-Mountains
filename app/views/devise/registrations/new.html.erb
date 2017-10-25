@@ -26,7 +26,7 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="field">
+  <div class="field"> Avatar
     <%= f.label :avatar do %>
       <%= f.file_field :avatar %>
       <%= f.hidden_field :avatar_cache %>
@@ -34,7 +34,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Create Account" %>
+    <%= f.submit "Create Account", :class => 'button' %>
   </div>
 <% end %>
 
