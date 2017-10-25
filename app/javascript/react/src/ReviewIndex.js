@@ -6,7 +6,10 @@ const ReviewIndex = props => {
     return(
       <ReviewTile
         key={review.id}
-        review={review}
+        rating={review.rating}
+        skiingReview={review.skiing_review}
+        foodReview={review.food_review}
+        lodgingReview={review.lodging_review}
       />
     )
   })

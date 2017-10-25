@@ -9,33 +9,35 @@ class MountainShowReviewsContainer extends React.Component{
    super(props);
    this.state = {
      reviews: [],
-     currentUser: []
+     currentUser: [],
+     mountain: {name: ""}
    }
    this.addNewReview = this.addNewReview.bind(this)
  }
 
  componentDidMount() {
-   fetch('/api/v1/user/is_signed_in')
+   fetch('/api/v1/user/is_signed_in.json', {
+     credentials: 'same-origin',
+     method: 'GET',
+     headers: { 'Content-Type': 'application/json' }
+   })
      .then(response => response.json())
      .then(body => {
-       let user = body.user;
-       this.setState({currentUser: user })
+       this.setState({ currentUser: body.user })
+     })
+     let id = this.props.params.id
+     fetch(`/api/v1/mountains/${id}`)
+      .then(response => response.json())
+      .then (body => {
+       let reviews = body.reviews;
+       let mountain = body.mountain
+       this.setState({reviews: reviews, mountain: mountain})
      })
  }
 
-
- componentDidMount() {
-   fetch('/api/v1/mountains/:id')
-    .then(response => response.json())
-    .then (body => {
-      let reviews = body.reviews;
-      this.setState({reviews: reviews})
-    })
-
- }
-
  addNewReview(payLoad) {
-  fetch('/api/v1/reviews', {
+  let id = this.props.params.id
+  fetch(`/api/v1/mountains/${id}/reviews`, {
     method: 'POST',
     body: JSON.stringify(payLoad)
   })
@@ -50,11 +52,15 @@ class MountainShowReviewsContainer extends React.Component{
     return(
       <div>
 
-        <HeaderTile title ="Reviews"/>
+        <HeaderTile title ={this.state.mountain.name}/>
 
         <ReviewFormContainer
-          addNewReview={this.addNewReview} />
+          addNewReview={this.addNewReview}
+          formCurrentUser={this.state.currentUser}
+          currentMountain={this.state.mountain}
+        />
 
+        
         <ReviewIndex
           reviews={this.state.reviews}
           currentUser={this.state.currentUser}

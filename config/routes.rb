@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :mountains, only: [:create, :index, :show]
+      resources :mountains, only: [:create, :index, :show] do
+        resources :reviews, only: [:create]
+      end
+
       scope :user do
         get 'is_signed_in', to: 'user#is_signed_in?'
       end
@@ -18,7 +21,7 @@ Rails.application.routes.draw do
   resources :mountains do
     resources :reviews, except: [:index, :show]
   end
-  
+
   resources :users, only: [:show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
