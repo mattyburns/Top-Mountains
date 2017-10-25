@@ -62,6 +62,8 @@ class MountainShowReviewsContainer extends React.Component{
         />
         </div>
         <div class="site-index">
+
+
         <ReviewIndex
           reviews={this.state.reviews}
           currentUser={this.state.currentUser}
