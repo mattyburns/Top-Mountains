@@ -23,11 +23,25 @@ const ReviewTile = props => {
       <p>Food Review: {props.foodReview}</p>
       <p>Lodging Review: {props.lodgingReview}</p>
 
-      
-      <li>
-        <button className="button" type="button">Upvote</button>
-        <button className="button" type="button">Downvote</button>
-      </li>
+
+      <div>
+        <button
+          className="button"
+          type="button"
+          name="upvote"
+          id={props.id}
+          onClick={props.voteHandler}>
+          Upvote
+        </button>
+        <button
+          className="button"
+          type="button"
+          name="downvote"
+          id={props.id}
+          onClick={props.voteHandler}>
+          Downvote
+        </button>
+      </div>
 
       <button className={`${blankOrDelete}`} type="button">Delete</button>
 </div>

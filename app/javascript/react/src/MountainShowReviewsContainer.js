@@ -13,6 +13,7 @@ class MountainShowReviewsContainer extends React.Component{
      mountain: {name: ""}
    }
    this.addNewReview = this.addNewReview.bind(this)
+   this.handleVote = this.handleVote.bind(this)
  }
 
  componentDidMount() {
@@ -35,6 +36,23 @@ class MountainShowReviewsContainer extends React.Component{
      })
  }
 
+ handleVote(event) {
+   let payLoad = {
+     reviewId: event.target.id,
+     userId: this.state.currentUser.id,
+     vote: event.target.name
+   }
+   debugger
+   fetch(`/api/v1/upvotes`, {
+     method: 'POST',
+     body: JSON.stringify(payLoad)
+   })
+   .then(response => response.json())
+   .then(responseData =>{
+     this.setState({ reviews: [...this.state.reviews, responseData] })
+   })
+ }
+
  addNewReview(payLoad) {
   let id = this.props.params.id
   fetch(`/api/v1/mountains/${id}/reviews`, {
@@ -48,6 +66,7 @@ class MountainShowReviewsContainer extends React.Component{
  }
   render() {
     let addNewReview = (payLoad) => this.addNewReview(payLoad)
+    let handleVote = (event) => this.voteHandler(event)
 
     return(
       <div>
@@ -64,6 +83,7 @@ class MountainShowReviewsContainer extends React.Component{
         <ReviewIndex
           reviews={this.state.reviews}
           currentUser={this.state.currentUser}
+          voteHandler={this.handleVote}
         />
       </div>
     )
