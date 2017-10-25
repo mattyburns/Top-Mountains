@@ -19,7 +19,7 @@ feature 'delete user account' , %{
     click_button "Cancel my account"
 
     expect(page).to have_content("Bye! Your account has been successfully cancelled. We hope to see you again soon.")
-    expect(page).to have_content("Mountains")
+    expect(page.html).to have_content("This is the main site")
     click_link "Sign In"
     fill_in 'Email', with: 'skibuddy@aol.com'
     fill_in 'Password', with: 'isuredoloveskiing'
