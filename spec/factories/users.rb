@@ -4,5 +4,6 @@ FactoryGirl.define do
     email "userguy@aol.com"
     password "passwordguy"
     role "member"
+    # admin "false"
   end
 end
