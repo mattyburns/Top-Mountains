@@ -4,8 +4,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resources :users, only: [:index, :show, :destroy]
       resources :reviews, only: [:create] #this is just to test the reviews controller
-      resources :mountains, only: [:create, :index, :show] do
+      resources :mountains, only: [:create, :index, :show, :destroy] do
         resources :reviews, only: [:create]
       end
       resources :upvotes, only: [:create]
@@ -19,10 +20,13 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :destroy]
   end
 
+  get '/mountains/:id', to: 'mountains#index'
+
   resources :mountains do
     resources :reviews, except: [:index, :show]
   end
 
   resources :users, only: [:show]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
