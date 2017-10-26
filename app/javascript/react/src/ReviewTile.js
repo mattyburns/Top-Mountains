@@ -18,10 +18,12 @@ const ReviewTile = props => {
   return(
     <div>
 
+      <p>{props.username}</p>
       <p>Rating: {props.rating}</p>
       <p>Skiing Review: {props.skiingReview}</p>
       <p>Food Review: {props.foodReview}</p>
       <p>Lodging Review: {props.lodgingReview}</p>
+      <p>Votes: {props.voteTotal}</p>
 
 
       <div>

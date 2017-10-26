@@ -24,7 +24,8 @@ class Api::V1::MountainsController < ApplicationController
 
   def show
     mountain = Mountain.find(params[:id])
-    render :json => {"mountain" => mountain, "reviews" => mountain.reviews}
+    # render :json => {"mountain" => mountain, "reviews" => mountain.reviews, serializer: ReviewSerializer}
+    render json: mountain
   end
 
   def create

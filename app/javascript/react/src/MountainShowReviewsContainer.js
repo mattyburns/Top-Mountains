@@ -30,8 +30,8 @@ class MountainShowReviewsContainer extends React.Component{
      fetch(`/api/v1/mountains/${id}`)
       .then(response => response.json())
       .then (body => {
-       let reviews = body.reviews;
        let mountain = body.mountain
+       let reviews = mountain.reviews;
        this.setState({reviews: reviews, mountain: mountain})
      })
  }
@@ -48,8 +48,7 @@ class MountainShowReviewsContainer extends React.Component{
    })
    .then(response => response.json())
    .then(responseData =>{
-     debugger
-     this.setState({ reviews: [...this.state.reviews, responseData] })
+     this.setState({ reviews: responseData.reviews })
    })
  }
 
@@ -61,13 +60,12 @@ class MountainShowReviewsContainer extends React.Component{
   })
   .then(response => response.json())
   .then(responseData =>{
-    this.setState({ reviews: [...this.state.reviews, responseData] })
+    this.setState({ reviews: [...this.state.reviews, responseData.review] })
   })
  }
   render() {
     let addNewReview = (payLoad) => this.addNewReview(payLoad)
     let handleVote = (event) => this.voteHandler(event)
-
     return(
       <div>
 

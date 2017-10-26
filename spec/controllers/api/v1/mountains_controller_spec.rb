@@ -51,8 +51,8 @@ RSpec.describe Api::V1::MountainsController, type: :controller do
       get :show, params: { id: loon.id }
       returned_json = JSON.parse(response.body)
       mountain = returned_json["mountain"]
-      reviews = returned_json["reviews"]
-
+      reviews = mountain["reviews"]
+    
       expect(response.status).to eq 200
       expect(response.content_type).to eq("application/json")
 

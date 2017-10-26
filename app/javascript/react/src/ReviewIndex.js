@@ -8,9 +8,11 @@ const ReviewIndex = props => {
         key={review.id}
         id={review.id}
         rating={review.rating}
+        username={review.username}
         skiingReview={review.skiing_review}
         foodReview={review.food_review}
         lodgingReview={review.lodging_review}
+        voteTotal={review.vote_total}
         voteHandler={props.voteHandler}
       />
     )

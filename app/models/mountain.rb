@@ -77,7 +77,7 @@ class Mountain < ApplicationRecord
     else
       Mountain.all
     end
-  end
+  end 
 
   def rating
     if reviews.empty?

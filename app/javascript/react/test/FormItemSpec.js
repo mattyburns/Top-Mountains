@@ -1,5 +1,5 @@
 import FormItem from '../src/FormItem'
-import testHelper from '../javascript/react/src/test/testHelper'
+import testHelper from './testHelper'
 
 
 describe('FormItem', () => {
@@ -14,7 +14,7 @@ describe('FormItem', () => {
       name= "city"
       content ="Boston"
       nameText = "City:"
-      handler = {handleCity}
+      handler = {handler}
                     />
     );
   });
@@ -22,7 +22,7 @@ describe('FormItem', () => {
   debugger
 
   it('should render an input tag', () =>{
-    expect(wrapper.find('input').toBePresent();
+    expect(wrapper.find('input')).toBePresent();
   });
 
   // it ('should render an input field with the nameText label', () => {
