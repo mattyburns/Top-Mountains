@@ -8,6 +8,7 @@ const MountainIndex = props => {
           key={mountain.id}
           mountain={mountain}
           currentUser={props.currentUser}
+          handleDeleteMountain={props.handleDeleteMountain}
         />
     )
   })

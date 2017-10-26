@@ -11,6 +11,7 @@ class MountainIndexContainer extends React.Component{
      currentUser: []
    }
    this.addNewMountain = this.addNewMountain.bind(this)
+   this.handleDeleteMountain = this.handleDeleteMountain.bind(this)
  }
 
  componentDidMount() {
@@ -23,8 +24,11 @@ class MountainIndexContainer extends React.Component{
      .then(body => {
        this.setState({ currentUser: body.user })
      })
-
-   fetch('http://localhost:3000/api/v1/mountains')
+   fetch('http://localhost:3000/api/v1/mountains', {
+     credentials: 'same-origin',
+     method: 'GET',
+     headers: { 'Content-Type': 'application/json' }
+   })
     .then(response => response.json())
     .then (body => {
       this.setState({ mountains: body.mountains })
@@ -42,9 +46,31 @@ class MountainIndexContainer extends React.Component{
    })
  }
 
+ handleDeleteMountain(event) {
+   let id = event.target.name
+   fetch(`/api/v1/mountains/${id}`, {
+     method: 'DELETE',
+     credentials: 'same-origin',
+     headers: { 'Content-Type': 'application/json' }
+   })
+   .then(response => {
+     if (response.ok) {
+       return response
+     } else {
+       let errorMessage = `${response.status} (${response.statusText})`;
+       let error = new Error(errorMessage);
+       throw(error);
+     }
+   })
+   .then(response => response.json())
+   .then(response => {
+     this.setState( {mountains: response.mountains} )
+   })
+ }
 
   render() {
     let addNewMountain = (payLoad) => this.addNewMountain(payLoad)
+    let handleDeleteMountain = (event) => this.handleDeleteMountain(event)
 
     return(
       <div>
@@ -59,6 +85,7 @@ class MountainIndexContainer extends React.Component{
         <MountainIndex
           mountains={this.state.mountains}
           currentUser={this.state.currentUser}
+          handleDeleteMountain={this.handleDeleteMountain}
         />
       </div>
     )
