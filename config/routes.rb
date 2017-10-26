@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :mountains, only: [:create, :index, :show]
+      resources :reviews, only: [:create] #this is just to test the reviews controller
+      resources :mountains, only: [:create, :index, :show] do
+        resources :reviews, only: [:create]
+      end
       resources :upvotes, only: [:create, :update]
       scope :user do
         get 'is_signed_in', to: 'user#is_signed_in?'

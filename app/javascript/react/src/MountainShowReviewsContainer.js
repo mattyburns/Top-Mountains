@@ -60,7 +60,7 @@ class MountainShowReviewsContainer extends React.Component{
           currentMountain={this.state.mountain}
         />
 
-        
+
         <ReviewIndex
           reviews={this.state.reviews}
           currentUser={this.state.currentUser}
