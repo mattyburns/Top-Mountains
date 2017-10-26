@@ -29,6 +29,7 @@ const ReviewTile = props => {
           className="button"
           type="button"
           name="upvote"
+          value="1"
           id={props.id}
           onClick={props.voteHandler}>
           Upvote
@@ -37,6 +38,7 @@ const ReviewTile = props => {
           className="button"
           type="button"
           name="downvote"
+          value="-1"
           id={props.id}
           onClick={props.voteHandler}>
           Downvote

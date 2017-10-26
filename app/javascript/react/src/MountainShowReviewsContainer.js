@@ -40,15 +40,15 @@ class MountainShowReviewsContainer extends React.Component{
    let payLoad = {
      reviewId: event.target.id,
      userId: this.state.currentUser.id,
-     vote: event.target.name
+     vote: event.target.value
    }
-   debugger
    fetch(`/api/v1/upvotes`, {
      method: 'POST',
      body: JSON.stringify(payLoad)
    })
    .then(response => response.json())
    .then(responseData =>{
+     debugger
      this.setState({ reviews: [...this.state.reviews, responseData] })
    })
  }

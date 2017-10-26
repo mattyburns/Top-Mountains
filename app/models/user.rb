@@ -5,6 +5,7 @@ class User < ApplicationRecord
     foreign_key: 'creator_id'
 
   has_many :reviews
+  has_many :upvotes
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
