@@ -18,16 +18,34 @@ const ReviewTile = props => {
   return(
     <div>
 
+      <p>{props.username}</p>
       <p>Rating: {props.rating}</p>
       <p>Skiing Review: {props.skiingReview}</p>
       <p>Food Review: {props.foodReview}</p>
       <p>Lodging Review: {props.lodgingReview}</p>
+      <p>Votes: {props.voteTotal}</p>
 
-      
-      <li>
-        <button className="button" type="button">Upvote</button>
-        <button className="button" type="button">Downvote</button>
-      </li>
+
+      <div>
+        <button
+          className="button"
+          type="button"
+          name="upvote"
+          value="1"
+          id={props.id}
+          onClick={props.voteHandler}>
+          Upvote
+        </button>
+        <button
+          className="button"
+          type="button"
+          name="downvote"
+          value="-1"
+          id={props.id}
+          onClick={props.voteHandler}>
+          Downvote
+        </button>
+      </div>
 
       <button className={`${blankOrDelete}`} type="button">Delete</button>
 </div>

@@ -25,6 +25,11 @@ class Api::V1::MountainsController < ApplicationController
       render json: new_mountain
   end
 
+  def show
+    mountain = Mountain.find(params[:id])
+    # render :json => {"mountain" => mountain, "reviews" => mountain.reviews, serializer: ReviewSerializer}
+    render json: mountain
+  end
 
   def destroy
     mountain = Mountain.find(params[:id])

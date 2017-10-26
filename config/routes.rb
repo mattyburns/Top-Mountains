@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :mountains, only: [:create, :index, :show, :destroy] do
         resources :reviews, only: [:create]
       end
-      resources :upvotes, only: [:create, :update]
+      resources :upvotes, only: [:create]
       scope :user do
         get 'is_signed_in', to: 'user#is_signed_in?'
       end
