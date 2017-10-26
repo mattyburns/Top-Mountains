@@ -11,18 +11,10 @@ class MountainIndexContainer extends React.Component{
      currentUser: []
    }
    this.addNewMountain = this.addNewMountain.bind(this)
+   this.handleDeleteMountain = this.handleDeleteMountain.bind(this)
  }
 
  componentDidMount() {
-   // I started in your handleMountainSubmitForm function and noticed that current_user
-   // existed but was undefined. Tracing backwards, I found that
-   // it is this first fetch for the user that isn't working.
-   // I would compare code with Matty, since I know it's working for him!
-   // Look at the syntax in this fetch, as well as the syntax in your api/v1/user_controller
-   // Once you get to a place where the debugger in the render gives you a defined `this.state.currentUser`,
-   // you can then move on to throwing some debuggers into your submit and addNewMountain functions
-   // to take a look at what values are getting through to each.
-
    fetch('/api/v1/user/is_signed_in.json', {
      credentials: 'same-origin',
      method: 'GET',
@@ -32,8 +24,11 @@ class MountainIndexContainer extends React.Component{
      .then(body => {
        this.setState({ currentUser: body.user })
      })
-
-   fetch('http://localhost:3000/api/v1/mountains')
+   fetch('http://localhost:3000/api/v1/mountains', {
+     credentials: 'same-origin',
+     method: 'GET',
+     headers: { 'Content-Type': 'application/json' }
+   })
     .then(response => response.json())
     .then (body => {
       this.setState({ mountains: body.mountains })
@@ -51,10 +46,31 @@ class MountainIndexContainer extends React.Component{
    })
  }
 
+ handleDeleteMountain(event) {
+   let id = event.target.name
+   fetch(`/api/v1/mountains/${id}`, {
+     method: 'DELETE',
+     credentials: 'same-origin',
+     headers: { 'Content-Type': 'application/json' }
+   })
+   .then(response => {
+     if (response.ok) {
+       return response
+     } else {
+       let errorMessage = `${response.status} (${response.statusText})`;
+       let error = new Error(errorMessage);
+       throw(error);
+     }
+   })
+   .then(response => response.json())
+   .then(response => {
+     this.setState( {mountains: response.mountains} )
+   })
+ }
 
   render() {
     let addNewMountain = (payLoad) => this.addNewMountain(payLoad)
-    debugger;
+    let handleDeleteMountain = (event) => this.handleDeleteMountain(event)
 
     return(
       <div>
@@ -74,6 +90,7 @@ class MountainIndexContainer extends React.Component{
         <MountainIndex
           mountains={this.state.mountains}
           currentUser={this.state.currentUser}
+          handleDeleteMountain={this.handleDeleteMountain}
         />
       </div>
       </div>

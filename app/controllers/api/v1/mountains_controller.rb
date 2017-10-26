@@ -1,19 +1,16 @@
 class Api::V1::MountainsController < ApplicationController
-  # skip_before_action :verify_authenticity_token
-  # protect_from_forgery unless: -> { request.format.json? }
+  skip_before_action :verify_authenticity_token
+  protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    mountains = Mountain.all
-    mountains_sorted_by_rating = mountains.sort_by{|mountain| mountain.rating}.reverse
-    render json: mountains_sorted_by_rating
-    # render :json => {"mountain" => mountains_sorted_by_rating}.to_json()
+    render json: Mountain.by_rating
   end
 
   def show
     mountain = Mountain.find(params[:id])
     render :json => {"mountain" => mountain, "reviews" => mountain.reviews}
   end
-
+  
   def create
     mountain = JSON.parse(request.body.read)
     binding.pry
@@ -27,6 +24,9 @@ class Api::V1::MountainsController < ApplicationController
       creator_id: mountain["creator_id"]
     )
     render json: new_mountain
+  def destroy
+    mountain = Mountain.find(params[:id])
+    mountain.destroy
+    render json: Mountain.by_rating
   end
-
 end

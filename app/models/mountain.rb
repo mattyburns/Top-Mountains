@@ -71,6 +71,10 @@ class Mountain < ApplicationRecord
     inclusion: { in: STATES.map { |state| state[0] } }
   validates :zip, numericality: true, presence: true, length: { is: 5}
 
+  def self.by_rating
+   self.all.sort_by{|mountain| mountain.rating}.reverse
+  end
+
   def self.search(search)
     if search
       find(:all, :conditions =>['name LIKE ?', "%#{search}"])
