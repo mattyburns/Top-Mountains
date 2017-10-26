@@ -14,6 +14,15 @@ class MountainIndexContainer extends React.Component{
  }
 
  componentDidMount() {
+   // I started in your handleMountainSubmitForm function and noticed that current_user
+   // existed but was undefined. Tracing backwards, I found that
+   // it is this first fetch for the user that isn't working.
+   // I would compare code with Matty, since I know it's working for him!
+   // Look at the syntax in this fetch, as well as the syntax in your api/v1/user_controller
+   // Once you get to a place where the debugger in the render gives you a defined `this.state.currentUser`,
+   // you can then move on to throwing some debuggers into your submit and addNewMountain functions
+   // to take a look at what values are getting through to each.
+
    fetch('/api/v1/user/is_signed_in.json', {
      credentials: 'same-origin',
      method: 'GET',
@@ -45,6 +54,7 @@ class MountainIndexContainer extends React.Component{
 
   render() {
     let addNewMountain = (payLoad) => this.addNewMountain(payLoad)
+    debugger;
 
     return(
       <div>

@@ -120,7 +120,7 @@ class MountainFormContainer extends Component {
 
     return (
       <form className="callout" id="site-form">
-        
+
 
         <FormItem
           name="name"
