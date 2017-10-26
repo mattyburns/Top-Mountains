@@ -29,9 +29,9 @@ const MountainTile = props => {
         <img src={`${props.mountain.image_url}`} alt={`Picture of ${props.mountain.name}`}/>
       </Link>
 
-      <button id="button" className={`${blankOrDelete}`} type="button">Delete</button>
+      <button id="button" name={props.mountain.id} className={`${blankOrDelete}`} type="button" onClick={props.handleDeleteMountain}>Delete</button>
 
-    </div>
+        </div>
   )
 }
 
