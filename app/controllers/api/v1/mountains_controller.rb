@@ -12,7 +12,6 @@ class Api::V1::MountainsController < ApplicationController
   end
 
   def create
-    binding.pry
       mountain = JSON.parse(request.body.read)
       new_mountain = Mountain.create(
         name: mountain["name"],

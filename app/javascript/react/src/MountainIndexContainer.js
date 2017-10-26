@@ -68,8 +68,6 @@ class MountainIndexContainer extends React.Component{
    })
  }
 
-
-
   render() {
     let addNewMountain = (payLoad) => this.addNewMountain(payLoad)
     let handleDeleteMountain = (event) => this.handleDeleteMountain(event)
