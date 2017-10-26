@@ -13,9 +13,9 @@ class Api::V1::ReviewsController < ApplicationController
 
     if @new_review.save
       UserReviewedItemMailer.email_mountain_creator(@new_review)
-      redirect_to mountain_path(review["mountainId"])
+      render json: @new_review
+    else
+      render json: {error: "Sorry, this did not work!"}
     end
-    # UserReviewedItemMailer.email_mountain_creator(new_review)
-    render json: @new_review
   end
 end

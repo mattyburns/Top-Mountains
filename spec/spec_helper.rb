@@ -51,6 +51,11 @@ RSpec.configure do |config|
   config.before :each do
     ActionMailer::Base.deliveries.clear
   end
+
+  # def get_message_part(mail, content_type)
+  #   mail.body.parts.find { |p| p.content_type.match content_type }.body.raw_source
+  # end
+
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin
