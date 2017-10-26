@@ -29,6 +29,7 @@ body {
 h2 {
 margin-top: 5px;
 margin-bottom: 5px;
+text-shadow: 2px 2px #ededed;
 }
 
 img {
@@ -112,7 +113,7 @@ form{
   background-position: 0 0rem;
   background-size: cover;
   border-style: solid;
-  border-width: 0px 0px 5px 0px;
+  border-width: 0px 0px 0px 0px;
   border-color: black;
 }
 
@@ -295,4 +296,5 @@ select {
 }
 
 .radioStars {
+
 }
