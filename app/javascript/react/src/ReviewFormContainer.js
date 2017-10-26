@@ -29,6 +29,7 @@ class ReviewFormContainer extends Component {
   }
 
   handleChangeStars(event){
+    // event.preventDefault()
     let field = event.target.name
     let Value = event.target.value
     let newValue = Number(Value)
@@ -94,7 +95,7 @@ class ReviewFormContainer extends Component {
 
     return (
       <form className="callout" id="review-form">
-        <h2>Write A Review</h2>
+
 
         <RadioStar
           name="rating"

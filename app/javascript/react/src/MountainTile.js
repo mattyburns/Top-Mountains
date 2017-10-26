@@ -18,17 +18,15 @@ const MountainTile = props => {
 
   return(
     <div className="site-tile">
-      <div>
+      <img className="mountainimage" src={`${props.mountain.image_url}`} alt={`Picture of ${props.mountain.name}`}/>
+      <div className="mountain-tile-name">
         <Link to= {`/mountains/${props.mountain.id}`}>
-        <h2 className="mountain-name">{props.mountain.name}</h2>
+        <h3 className="mountain-name"><strong>{props.mountain.name}:</strong> {props.mountain.city}, {props.mountain.state}</h3>
         </Link>
       </div>
-      <div>
-        <p className="location">{props.mountain.city}, {props.mountain.state}</p>
-      </div>
-        <img src={`${props.mountain.image_url}`} alt={`Picture of ${props.mountain.name}`}/>
+        <div className="mountain-delete-button">
       <button id="button" className={`${blankOrDelete}`} type="button">Delete</button>
-
+    </div>
     </div>
   )
 }
