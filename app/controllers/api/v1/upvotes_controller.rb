@@ -9,10 +9,14 @@ class Api::V1::UpvotesController < ApplicationController
     vote_value = input["vote"].to_i
     vote = user.upvotes.find_by(review: review)
     review.vote_total
-    if vote #if there is already an upvote
-      new_vote = vote.vote + vote_value
+    if vote
+      if vote.vote == vote_value
+        new_vote = 0
+      else
+        new_vote = vote_value
+      end
       vote.update(vote: new_vote)
-    else #if there is no upvote
+    else 
       new_vote = Upvote.create(
         user: user,
         review: review,
