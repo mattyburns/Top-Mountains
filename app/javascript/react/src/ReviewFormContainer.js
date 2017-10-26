@@ -101,12 +101,8 @@ class ReviewFormContainer extends Component {
           handler={this.handleChangeStars}
           content={this.state.rating}
         />
-        <FormItem
-          name="rating"
-          content={this.state.rating}
-          nameText="Rating"
-          handler={this.handleChange}
-        />
+        <br/>
+        <br/>
 
         <TextAreaFormItem
           name="skiingReview"
