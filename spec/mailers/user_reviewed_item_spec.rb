@@ -14,16 +14,30 @@ RSpec.describe UserReviewedItemMailer, :type => :mailer do
       expect(mail.from).to eq(["gondolavelopers@gmail.com"])
     end
 
-    # it "renders the body" do
-    #   expect().to eq("Hello skibud22,\n\n      skibud22 has left a new review for the mountain you created - Loon!\n\n      Go check it out at http://localhost:3000/mountains/1\n\n      Cold hands, but warm wishes,\n      The Gondolavelopers")
-    # end
-  # describe "html version" do
-  #   it_behaves_like "Hello skibud22,\n\n      skibud22 has left a new review for the mountain you created - Loon!\n\n      Go check it out at http://localhost:3000/mountains/1\n\n      Cold hands, but warm wishes,\n      The Gondolavelopers" do
-  #     let(:part) { get_message_part(mail, /html/) }
-  #   end
-    #
-    # it "renders the body" do
-    #   expect(mail.body.encoded).to match("Hello skibud22,\n\n      skibud22 has left a new review for the mountain you created - Loon!\n\n      Go check it out at http://localhost:3000/mountains/1\n\n      Cold hands, but warm wishes,\n      The Gondolavelopers")
-    # end
+    it "renders the body" do
+      expect(mail.text_part.body.raw_source).to match("Hello skibud22,\n\nskibud22 has left a new review for the mountain you created - Loon!\n\nGo check it out here: http://localhost:3000/mountains/#{loon.id}\n\nCold hands, but warm wishes,\nThe Gondolavelopers")
+      expect(mail.html_part.body.raw_source).to match("<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Hello skibud22,</p>
+
+<p>skibud22 has left a new review for the mountain you created - Loon!</p>
+
+<p>Go check it out here: <a href=\"http://localhost:3000/mountains/#{loon.id}\">Loon</a></p>
+
+<p>Cold hands, but warm wishes,<br />
+The Gondolavelopers</p>
+
+  </body>
+</html>
+")
+    end
   end
 end

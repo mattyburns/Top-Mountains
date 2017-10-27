@@ -12,10 +12,10 @@ class Api::V1::ReviewsController < ApplicationController
     )
 
     if @new_review.save
-      UserReviewedItemMailer.email_mountain_creator(@new_review)
+      UserReviewedItemMailer.email_mountain_creator(@new_review).deliver_now
       render json: @new_review
     else
-      render json: {error: "Sorry, this did not work!"}
+      render json: {error: "Sorry, the review did not save and the email was not sent!"}
     end
   end
 end
