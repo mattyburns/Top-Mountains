@@ -29,7 +29,7 @@
       <div class="sign-in">
       <% if user_signed_in? %>
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>  /
-        <%= link_to "Edit Profile", edit_user_registration_path %>
+        <%= link_to "View Profile", user_path(current_user.id) %>
         <% if current_user.admin? %>
            / <%= link_to "Admin View All Users", admin_users_path %>
         <% end %>

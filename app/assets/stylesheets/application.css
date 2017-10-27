@@ -404,3 +404,6 @@ ul {
    width: 200px;
    margin-left: 41%;
  }
+.user-list a {
+  color: blue;
+}
