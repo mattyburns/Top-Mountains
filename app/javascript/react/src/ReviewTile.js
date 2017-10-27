@@ -16,7 +16,7 @@ const ReviewTile = props => {
   }
 
   return(
-    <div>
+    <div className="site-tile">
 
       <p>{props.username}</p>
       <p>Rating: {props.rating}</p>

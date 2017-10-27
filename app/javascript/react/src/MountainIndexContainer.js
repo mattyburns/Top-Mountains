@@ -74,19 +74,25 @@ class MountainIndexContainer extends React.Component{
 
     return(
       <div>
-
         <HeaderTile title="Top Mountains"/>
-
-        <MountainFormContainer
-          addNewMountain={this.addNewMountain}
-          formCurrentUser={this.state.currentUser}
-        />
-
-        <MountainIndex
-          mountains={this.state.mountains}
-          currentUser={this.state.currentUser}
-          handleDeleteMountain={this.handleDeleteMountain}
-        />
+        <div className="site-view">
+          <div className="site-form-index">
+            <h2>Create A Mountain</h2>
+            <div className="site-form">
+              <MountainFormContainer
+                addNewMountain={this.addNewMountain}
+                formCurrentUser={this.state.currentUser}
+              />
+            </div>
+          </div>
+          <div className="site-index">
+            <MountainIndex
+              mountains={this.state.mountains}
+              currentUser={this.state.currentUser}
+              handleDeleteMountain={this.handleDeleteMountain}
+            />
+          </div>
+        </div>
       </div>
     )
   }

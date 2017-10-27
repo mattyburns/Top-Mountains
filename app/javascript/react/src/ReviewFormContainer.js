@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import FormItem from './FormItem'
 import ErrorBox from './ErrorBox'
+import RadioStars from './radiostars'
+import TextAreaFormItem from './TextAreaFormItem'
 
 
 class ReviewFormContainer extends Component {
@@ -86,33 +88,34 @@ class ReviewFormContainer extends Component {
 
     return (
       <form className="callout" id="review-form">
-        <h4>Review Form</h4>
 
-        <FormItem
+
+        <RadioStars
           name="rating"
-          content={this.state.rating}
-          nameText="Rating:"
           handler={this.handleChange}
+          content={this.state.rating}
         />
+        <br/>
+        <br/>
 
-        <FormItem
+        <TextAreaFormItem
           name="skiingReview"
           content={this.state.skiingReview}
-          nameText="Skiing Review:"
+          nameText="Skiing Review"
           handler={this.handleChange}
         />
 
-        <FormItem
+        <TextAreaFormItem
           name="foodReview"
           content={this.state.foodReview}
-          nameText="Food Review:"
+          nameText="Food Review"
           handler={this.handleChange}
         />
 
-        <FormItem
+        <TextAreaFormItem
           name="lodgingReview"
           content={this.state.lodgingReview}
-          nameText="Lodging Review:"
+          nameText="Lodging Review"
           handler={this.handleChange}
         />
         <div>
