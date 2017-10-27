@@ -106,6 +106,9 @@ class MountainFormContainer extends Component {
       image_url: this.state.imageUrl,
       creator_id: this.props.formCurrentUser.id
     }
+    if (mountainPayload.image_url == "") {
+      mountainPayload.image_url = "https://d30y9cdsu7xlg0.cloudfront.net/png/16025-200.png"
+    }
     this.props.addNewMountain(mountainPayload);
   }
 
