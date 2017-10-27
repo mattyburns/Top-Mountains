@@ -3,7 +3,8 @@ import React from 'react';
 //need to figure out why this is defaulting to Alabama and not setting to state
 
 const DropDown = props => {
-  let states = [["AL","Alabama"],
+  let states = [["","Select a State"],
+  ["AL","Alabama"],
   ["AK","Alaska"],
   ["AZ","Arizona"],
   ["AR","Arkansas"],
@@ -64,7 +65,7 @@ const DropDown = props => {
 
 <div>
   <label name={props.name}>{props.nameText}</label>
-  <select onChange={props.handler} name={props.name}>
+  <select onChange={props.handler} name={props.name} value={props.content}>
     {stateOptions}
   </select>
 </div>
