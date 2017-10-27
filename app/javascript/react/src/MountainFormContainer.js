@@ -77,7 +77,7 @@ class MountainFormContainer extends Component {
       name: '',
       address: '',
       city: '',
-      state: '',
+      state: 'Select a state',
       zip: '',
       imageUrl: ''
     })

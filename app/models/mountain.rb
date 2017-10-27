@@ -76,12 +76,13 @@ class Mountain < ApplicationRecord
   end
 
   def self.search(search)
-    if search
-      find(:all, :conditions =>['name LIKE ?', "%#{search}"])
+    results = self.where("name ILIKE ?", "%#{search}%")
+    if results !=[]
+      results
     else
-      Mountain.all
+      self.all
     end
-  end 
+  end
 
   def rating
     if reviews.empty?
