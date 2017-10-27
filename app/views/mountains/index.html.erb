@@ -1,4 +1,4 @@
 <h1>Mountains Matching "<%= @search %>"</h1>
 <% @mountains.each do |mountain| %>
-  <li><%= link_to mountain.name, mountain_path(mountain.id) %></li>
+  <li><%= link_to mountain.name, mountain_path(mountain.id) %>, <%= mountain.city %>, <%= mountain.state %></li>
 <% end %>
