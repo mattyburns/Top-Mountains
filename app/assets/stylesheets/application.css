@@ -39,9 +39,29 @@
  }
 
  p {
+   padding-bottom: 5px;
    margin-top: 5px;
    margin-bottom: 5px;
+   overflow-wrap: normal;
+   text-overflow: ellipsis;
+   word-wrap: break-word;
+
  }
+
+.review-text {
+   margin-top: 5px;
+   margin-bottom: 5px;
+   overflow-wrap: normal;
+   text-overflow: ellipsis;
+   word-wrap: break-word;
+   white-space: initial;
+
+
+ }
+
+ul {
+  margin-top: 0px
+}
 
  img {
    width: 100px;
@@ -333,3 +353,24 @@
  .radioStars {
 
  }
+
+.new_user {
+  align-content: center;
+  width: 14%;
+  margin-left: 42%;
+  padding: 20px;
+ }
+
+.edit_user {
+ align-content: center;
+ width: 20%;
+ margin-left: 39%;
+ padding: 20px;
+}
+
+.cancel-account {
+  text-align: center;
+  width: 25%;
+  margin-left: 37%;
+  padding: 20px;
+}

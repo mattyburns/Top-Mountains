@@ -21,9 +21,12 @@
       <% end %>
 
       <div class="home">
-        <%= link_to "Home", root_path %>
+        <%= link_to "Top Mountains", root_path %>
       </div>
-
+      <div class="flasherror">
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+      </div>
       <div class="sign-in">
       <% if user_signed_in? %>
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
@@ -36,8 +39,6 @@
       <% end %>
     </div>
     </nav>
-    <%= flash[:notice] %>
-    <%= flash[:alert] %>
     <%= yield %>
     <div id="app"/>
   </body>
