@@ -21,6 +21,7 @@ Built With
 * React 16.0.0 - Front end
 * React-Router 3.0.5 - React rendering
 * Devise - User authentication
+* Mailcatcher - E-mailing in development
 * Postgresql - SQL Database
 * Rspec, Capybara - Backend testing
 * Enzyme, Karma, Jasmine - Front end testing
