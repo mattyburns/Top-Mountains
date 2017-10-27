@@ -14,8 +14,7 @@
       <div class="search-div">
       <%= form_tag mountains_path, :method => 'get', :class => 'search-bar'  do %>
         <div>
-          <%= text_field_tag :search, params[:search] %>
-          <%= submit_tag "Search", :name => nil, :class => 'button' %>
+          <%= text_field_tag :search, params[:search], :placeholder => "Search" %>
         </div>
       </div>
       <% end %>
