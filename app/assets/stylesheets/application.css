@@ -114,8 +114,8 @@
  }
 
  .mountain-tile-name{
-  width: 20%;
-
+   grid-column: 1;
+   width: 20%;
  }
 
  .mountainimage{
