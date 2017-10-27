@@ -42,7 +42,7 @@ class MountainIndexContainer extends React.Component{
    })
    .then(response => response.json())
    .then(responseData =>{
-     this.setState({ mountains: [...this.state.mountains, responseData.mountain] })
+     this.setState({ mountains: [responseData.mountain, ...this.state.mountains] })
    })
  }
 

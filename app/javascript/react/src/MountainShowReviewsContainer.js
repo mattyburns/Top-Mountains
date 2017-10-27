@@ -60,7 +60,7 @@ class MountainShowReviewsContainer extends React.Component{
   })
   .then(response => response.json())
   .then(responseData =>{
-    this.setState({ reviews: [...this.state.reviews, responseData.review] })
+    this.setState({ reviews: [responseData.review, ...this.state.reviews] })
   })
  }
   render() {
