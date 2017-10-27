@@ -1,9 +1,9 @@
-<% @users.each do |user| %>
-  <%= user.username %>
-  <%= user.email %>
-  <% if current_user.admin? %>
-    <%= link_to "delete", user, method: :delete, data: { confirm: "Are you sure?" } %>
-  <% end %>
-<% end %>
+<h2>Registered Users</h2>
 
-<h1>Hello</h1>
+  <% @users.each do |user| %>
+  <div class="user-list">
+    <p>Username: <%= user.username %></p>
+    <p>Email: <%= user.email %></p>
+    <p>Role: <%= user.role %></p>
+    </div>
+  <% end %>
