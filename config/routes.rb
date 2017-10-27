@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "mountains#index"
+  root 'static_pages#index'
   devise_for :users, :controllers => { :registrations => :registrations}
 
   namespace :api do
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :destroy]
   end
 
-  get '/mountains/:id', to: 'mountains#index'
+  get '/mountains/:id', to: 'static_pages#index'
 
   resources :mountains do
     resources :reviews, except: [:index, :show]

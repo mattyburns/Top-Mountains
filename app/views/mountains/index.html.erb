@@ -1,1 +1,4 @@
-<p hidden> This is the main site</p>
+<h1>Mountains Matching "<%= @search %>"</h1>
+<% @mountains.each do |mountain| %>
+  <li><%= link_to mountain.name, mountain_path(mountain.id) %></li>
+<% end %>
