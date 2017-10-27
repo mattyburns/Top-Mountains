@@ -394,3 +394,16 @@ ul {
   margin-left: 37%;
   padding: 20px;
 }
+ .user-list {
+   text-align: center;
+   margin-bottom: 10px;
+   background-color: white;
+   border-color: #ededed;
+   border-width: medium;
+   border-style: solid;
+   width: 200px;
+   margin-left: 41%;
+ }
+.user-list a {
+  color: blue;
+}
