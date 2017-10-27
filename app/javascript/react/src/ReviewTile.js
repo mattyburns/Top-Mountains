@@ -18,13 +18,14 @@ const ReviewTile = props => {
   return(
     <div className="site-tile">
 
-      <p>{props.username}</p>
-      <p>Rating: {props.rating}</p>
-      <p>Skiing Review: {props.skiingReview}</p>
-      <p>Food Review: {props.foodReview}</p>
-      <p>Lodging Review: {props.lodgingReview}</p>
-      <p>Votes: {props.voteTotal}</p>
-
+      <div className="review-text">
+        <p><b>{props.username}</b></p>
+        <p><b>Rating:</b> {props.rating}</p>
+        <p><b>Skiing Review:</b> {props.skiingReview}</p>
+        <p><b>Food Review:</b> {props.foodReview}</p>
+        <p><b>Lodging Review:</b> {props.lodgingReview}</p>
+        <p><b>Votes:</b> {props.voteTotal}</p>
+      </div>
 
       <div>
         <button
