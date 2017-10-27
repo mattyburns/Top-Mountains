@@ -9,26 +9,26 @@ Top Mountains is a React/Rails app built to allow winter sports fans to contribu
 
 Authors
 
-Jenna Hight
-Matty Burns
-Serena Entezary
-Steven Boyle
+* Jenna Hight
+* Matty Burns
+* Serena Entezary
+* Steven Boyle
 
 
 Built With
 
-Rails 5.1.2 - Backend framework
-React 16.0.0 - Front end
-React-Router 3.0.5 - React rendering
-Devise - User authentication
-Postgresql - SQL Database
-Rspec, Capybara - Backend testing
-Enzyme, Karma, Jasmine - Front end testing
+* Rails 5.1.2 - Backend framework
+* React 16.0.0 - Front end
+* React-Router 3.0.5 - React rendering
+* Devise - User authentication
+* Postgresql - SQL Database
+* Rspec, Capybara - Backend testing
+* Enzyme, Karma, Jasmine - Front end testing
 
 
 Features
-* CRUD functionality for ski mountains, and reviews, with live rendering via React
+* CRUD functionality for ski mountains and reviews with live rendering via React
 * Devise authentication for user sign-up and account verification
-* Search bar for searching for a mountain by name
-* Built in Upvote and Downvote functionality on reviews
+* Search bar for finding a mountain by name
+* Built-in Upvote and Downvote functionality on reviews
 * Testing suite to ensure proper functioning when adding new features
