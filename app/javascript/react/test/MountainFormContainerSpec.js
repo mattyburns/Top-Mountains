@@ -16,12 +16,15 @@ describe ('MountainFormContainer', () =>{
       city: '',
       state: '',
       zip: '',
+      trailCount: '',
+      ticketPrice: '',
+      rentalPrice: '',
       imageUrl: '',
       errors: []})
   })
 
-  it('should render 5 FormItem Components', () => {
-    expect(wrapper.find('FormItem').length).toEqual(5);
+  it('should render 8 FormItem Components', () => {
+    expect(wrapper.find('FormItem').length).toEqual(8);
   })
 
   it('should render a DropDown Component', () => {

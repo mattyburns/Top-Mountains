@@ -188,8 +188,7 @@ class MountainFormContainer extends Component {
           nameText="Rental Price: (Optional)"
           handler={this.handleChange}
         />
-
-
+        
         <FormItem
           name="imageUrl"
           content={this.state.imageUrl}
