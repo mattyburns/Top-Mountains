@@ -3,7 +3,7 @@ import ReviewFormContainer from './ReviewFormContainer';
 import ReviewIndex from './ReviewIndex';
 import HeaderTile from './HeaderTile';
 import MountainInfoTile from './MountainInfoTile';
-
+import Access from './Access';
 
 class MountainShowReviewsContainer extends React.Component{
  constructor(props) {
@@ -92,9 +92,9 @@ class MountainShowReviewsContainer extends React.Component{
     let addNewReview = (payLoad) => this.addNewReview(payLoad)
     let handleVote = (event) => this.voteHandler(event)
     let handleDelete = (event) => this.handleDeleteReview(event)
+    if (this.state.currentUser) {
     return(
       <div>
-
         <HeaderTile title ={this.state.mountain.name}/>
 
         <div>
@@ -124,7 +124,30 @@ class MountainShowReviewsContainer extends React.Component{
           </div>
         </div>
       </div>
-    )
+    )} else {
+    return(
+      <div>
+        <HeaderTile title ={this.state.mountain.name}/>
+        <div className="site-view">
+          <div className="site-form-index">
+            <h2>Write A Review</h2>
+            <div className="site-form">
+              <Access
+              />
+            </div>
+          </div>
+          <div className="site-index">
+
+            <ReviewIndex
+              reviews={this.state.reviews}
+              currentUser={this.state.currentUser}
+              voteHandler={this.handleVote}
+              deleteHandler={handleDelete}
+            />
+          </div>
+        </div>
+      </div>
+    )}
   }
 }
 export default MountainShowReviewsContainer

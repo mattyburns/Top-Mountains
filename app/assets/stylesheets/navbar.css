@@ -1,0 +1,33 @@
+nav {
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  font-family: helvetica;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 3px;
+  padding-top: 4px;
+  margin-left: none;
+  margin-right: none;
+  vertical-align:  middle;
+  white-space: nowrap;
+}
+
+.search-bar {
+  background-color: black;
+  box-sizing:border-box;
+  width: 40%;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  float: left;
+  align-items: left;
+  white-space: nowrap;
+}
+
+.sign-in {
+  float:right;
+  text-align: right;
+  align-items: center;
+  font-family: 'Source Sans Pro', sans-serif
+}
