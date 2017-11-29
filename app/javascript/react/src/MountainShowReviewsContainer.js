@@ -1,7 +1,8 @@
-import React from 'react'
-import ReviewFormContainer from './ReviewFormContainer'
-import ReviewIndex from './ReviewIndex'
-import HeaderTile from './HeaderTile'
+import React from 'react';
+import ReviewFormContainer from './ReviewFormContainer';
+import ReviewIndex from './ReviewIndex';
+import HeaderTile from './HeaderTile';
+import MountainInfoTile from './MountainInfoTile';
 
 
 class MountainShowReviewsContainer extends React.Component{
@@ -10,7 +11,7 @@ class MountainShowReviewsContainer extends React.Component{
    this.state = {
      reviews: [],
      currentUser: [],
-     mountain: {name: ""}
+     mountain: ''
    }
    this.addNewReview = this.addNewReview.bind(this)
    this.handleVote = this.handleVote.bind(this)
@@ -95,6 +96,12 @@ class MountainShowReviewsContainer extends React.Component{
       <div>
 
         <HeaderTile title ={this.state.mountain.name}/>
+
+        <div>
+          <MountainInfoTile
+            mountain={this.state.mountain}
+          />
+        </div>
         <div className="site-view">
           <div className="site-form-index">
             <h2>Write A Review</h2>
