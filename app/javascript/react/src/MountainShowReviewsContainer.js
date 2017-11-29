@@ -100,6 +100,7 @@ class MountainShowReviewsContainer extends React.Component{
         <div className="site-view">
 
           <div className="site-form-index">
+            <h2>Mountain Details</h2>
             <div className="mountain-info-tile">
               <MountainInfoTile
                 mountain={this.state.mountain}
@@ -133,6 +134,7 @@ class MountainShowReviewsContainer extends React.Component{
         <div className="site-view">
 
           <div className="site-form-index">
+            <h2>{this.state.mountain.name}</h2>
             <div className="mountain-info-tile">
               <MountainInfoTile
                 mountain={this.state.mountain}

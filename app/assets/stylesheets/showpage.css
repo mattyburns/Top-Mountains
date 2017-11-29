@@ -6,3 +6,11 @@
    word-wrap: break-word;
    white-space: initial;
  }
+
+.mountain-info-tile{
+  background-color: #ededed;
+  opacity: 0.8;
+  padding: 10px;
+  justify-content: center;
+  color: black;
+}
