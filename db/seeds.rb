@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user_list = [
-  {username: "Userguy2323",
-    email: "userguy@aol.com",
-    password: "passwordguy",
-    role: "member",
-    admin: false
+  {username: "bob",
+    email: "bob@bob.com",
+    password: "password",
+    role: "admin",
+    admin: true
   },
   {username: "adminbuddy",
     email: "adminguy@gmail.com",

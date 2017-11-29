@@ -14,6 +14,7 @@ class MountainShowReviewsContainer extends React.Component{
    }
    this.addNewReview = this.addNewReview.bind(this)
    this.handleVote = this.handleVote.bind(this)
+   this.handleDeleteReview = this.handleDeleteReview.bind(this)
  }
 
  componentDidMount() {
@@ -63,9 +64,33 @@ class MountainShowReviewsContainer extends React.Component{
     this.setState({ reviews: [responseData.review, ...this.state.reviews] })
   })
  }
+
+ handleDeleteReview(event) {
+   let id = event.target.id
+   fetch(`/api/v1/reviews/${id}`, {
+     method: 'DELETE',
+     credentials: 'same-origin',
+     headers: { 'Content-Type': 'application/json' }
+   })
+   .then(response => {
+     if (response.ok) {
+       return response
+     } else {
+       let errorMessage = `${response.status} (${response.statusText})`;
+       let error = new Error(errorMessage);
+       throw(error);
+     }
+   })
+   .then(response => response.json())
+   .then(response => {
+     this.setState( {reviews: response.reviews} )
+   })
+
+ }
   render() {
     let addNewReview = (payLoad) => this.addNewReview(payLoad)
     let handleVote = (event) => this.voteHandler(event)
+    let handleDelete = (event) => this.handleDeleteReview(event)
     return(
       <div>
 
@@ -87,6 +112,7 @@ class MountainShowReviewsContainer extends React.Component{
               reviews={this.state.reviews}
               currentUser={this.state.currentUser}
               voteHandler={this.handleVote}
+              deleteHandler={handleDelete}
             />
           </div>
         </div>

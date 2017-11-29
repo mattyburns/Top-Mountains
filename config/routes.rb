@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: [:index, :show, :destroy]
-      resources :reviews, only: [:create] #this is just to test the reviews controller
+      resources :reviews, only: [:create, :destroy] #this is just to test the reviews controller
       resources :mountains, only: [:create, :index, :show, :destroy] do
         resources :reviews, only: [:create]
       end

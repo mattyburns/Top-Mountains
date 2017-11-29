@@ -22,16 +22,18 @@
  body {
    font-family: 'Source Sans Pro', sans-serif;
    margin: 0px;
-   background-color: white;
+   background-image: url(http://www.ospreypacks.com/stories/wp-content/uploads/2012/04/g19.jpg);
+
 
  }
 
 h2 {
-   color: black;
+   font-family: 'Lobster', cursive;
+  color: white;
  margin-top: 5px;
  margin-bottom: 10px;
  text-align: center;
- text-shadow: 1px 1px #ededed;
+ text-shadow: 2px 2px black;
 }
 
  h3 {
@@ -129,7 +131,7 @@ ul {
    padding-bottom: 30px
  }
  .site-form{
-
+      opacity: 0.8
  }
 
  .site-index{
@@ -141,13 +143,14 @@ ul {
    align-self: left;
    padding: 12px;
    margin-bottom: 10px;
-   background-color: white;
+   background-color: #ededed;
    border-color: #ededed;
    border-width: medium;
-   border-style: solid;
+   border-style: none;
    white-space: nowrap;
    grid-template-columns: 50% 50%;
    padding-bottom: 36px;
+   opacity: 0.8
  }
 
 
@@ -184,7 +187,6 @@ ul {
    color: white;
    font-size: 4rem;
    text-shadow: 3px 3px black;
-   background-image: url(http://www.ospreypacks.com/stories/wp-content/uploads/2012/04/g19.jpg);
    background-position: 0 0rem;
    background-size: cover;
    border-style: solid;
@@ -393,17 +395,4 @@ ul {
   width: 25%;
   margin-left: 37%;
   padding: 20px;
-}
- .user-list {
-   text-align: center;
-   margin-bottom: 10px;
-   background-color: white;
-   border-color: #ededed;
-   border-width: medium;
-   border-style: solid;
-   width: 200px;
-   margin-left: 41%;
- }
-.user-list a {
-  color: blue;
 }

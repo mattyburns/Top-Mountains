@@ -18,4 +18,12 @@ class Api::V1::ReviewsController < ApplicationController
       render json: {error: "Sorry, the review did not save and the email was not sent!"}
     end
   end
+
+  def destroy
+    review = Review.find(params[:id])
+    mountain = review.mountain
+    review.destroy
+    render json: mountain.reviews
+  end
+
 end

@@ -7,6 +7,7 @@ const ReviewTile = props => {
   } else if (props.currentUser.admin === true) {
     blankOrDelete = "delete"
   } else if (props.currentUser.admin != true && props.currentUser.id != null) {
+    debugger
     if (props.review.user_id === props.currentUser.id) {
       blankOrDelete = "delete"
     }
@@ -48,7 +49,7 @@ const ReviewTile = props => {
         </button>
       </div>
 
-      <button className={`${blankOrDelete}`} type="button">Delete</button>
+      <button className={`${blankOrDelete}`} id={props.id} type="button" onClick={props.deleteHandler}>Delete</button>
 </div>
   )
 
