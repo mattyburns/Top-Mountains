@@ -7,6 +7,7 @@ const ReviewIndex = props => {
       <ReviewTile
         key={review.id}
         id={review.id}
+        currentUser={props.currentUser}
         rating={review.rating}
         username={review.username}
         skiingReview={review.skiing_review}
@@ -14,6 +15,7 @@ const ReviewIndex = props => {
         lodgingReview={review.lodging_review}
         voteTotal={review.vote_total}
         voteHandler={props.voteHandler}
+        deleteHandler={props.deleteHandler}
       />
     )
   })
