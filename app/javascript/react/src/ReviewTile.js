@@ -1,18 +1,10 @@
 import React from 'react';
 
 const ReviewTile = props => {
-  let blankOrDelete = ""
-  if (props.currentUser === undefined) {
-    blankOrDelete = "blank"
-  } else if (props.currentUser.admin === true) {
-    blankOrDelete = "delete"
-  } else if (props.currentUser.admin != true && props.currentUser.id != null) {
-    debugger
-    if (props.review.user_id === props.currentUser.id) {
+  let blankOrDelete = "blank"
+  if (props.currentUser) {
+    if (props.currentUser.admin == true || props.creatorId == props.currentUser.id){
       blankOrDelete = "delete"
-    }
-    else {
-      blankOrDelete = "blank"
     }
   }
 

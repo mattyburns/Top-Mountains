@@ -8,6 +8,7 @@ const ReviewIndex = props => {
         key={review.id}
         id={review.id}
         currentUser={props.currentUser}
+        creatorId={review.user_id}
         rating={review.rating}
         username={review.username}
         skiingReview={review.skiing_review}
