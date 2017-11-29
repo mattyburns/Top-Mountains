@@ -1,0 +1,83 @@
+.site-view{
+ display: grid;
+ grid-template-columns: 30% 70%;
+ grid-gap: 10px;
+ color: #444;
+ margin-left: 5%;
+ margin-right: 5%;
+ margin-top: 5px;
+ padding-bottom: 30px
+}
+.site-form{
+ opacity: 0.8
+}
+
+.site-index{
+ margin-right: 10px;
+}
+
+.site-tile{
+ align-self: left;
+ padding: 12px;
+ margin-bottom: 10px;
+ background-color: #ededed;
+ border-color: #ededed;
+ border-width: medium;
+ border-style: none;
+ white-space: nowrap;
+ grid-template-columns: 50% 50%;
+ padding-bottom: 36px;
+ opacity: 0.8
+}
+
+
+.mountain-tile-name{
+ width: 100%;
+ overflow-wrap: normal;
+ text-overflow: ellipsis;
+ word-wrap:normal;
+ white-space: initial;
+}
+
+.mountainimage{
+ grid-column: 1;
+ float: left;
+ width: 100px;
+ height: 60px;
+ margin-right: 10px;
+ margin-bottom: 10px;
+}
+
+.site-tile a {
+ color: black;
+}
+.site-tile a:hover {
+ color: grey;
+}
+
+.title {
+ font-family: 'Lobster', cursive;
+ text-align: center;
+ margin: 0px;
+ padding: 5rem;
+ color: white;
+ font-size: 4rem;
+ text-shadow: 3px 3px black;
+ background-position: 0 0rem;
+ background-size: cover;
+ border-style: solid;
+ border-width: 0px 0px 0px 0px;
+ border-color: black;
+}
+
+.container{
+ display: grid;
+ grid-template-columns: 40% 20% 20% 20%;
+}
+
+.home{
+ font-family: 'Lobster', cursive;
+ float: inherit;
+ text-align: center;
+ align-items: center;
+}

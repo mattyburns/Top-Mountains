@@ -1,0 +1,40 @@
+input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+    border: none solid #ccc;
+    border-radius: 0px;
+    background-color: white;
+    margin: 2px 2px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+textarea {
+    width: 100%;
+    resize: none;
+    box-sizing: border-box;
+    border: none solid #ccc;
+    border-radius: 0px;
+    background-color: white;
+    margin: 2px 2px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+select {
+  border-width: thin;
+  background-color: white;
+  border-radius: 0px;
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 100%;
+}
+
+form {
+  font-size: .75em;
+  background-color: #ededed;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}

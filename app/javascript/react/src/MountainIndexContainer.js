@@ -2,6 +2,7 @@ import React from 'react';
 import MountainFormContainer from './MountainFormContainer'
 import MountainIndex from './MountainIndex'
 import HeaderTile from './HeaderTile'
+import Access from './Access'
 
 class MountainIndexContainer extends React.Component{
  constructor(props) {
@@ -71,7 +72,7 @@ class MountainIndexContainer extends React.Component{
   render() {
     let addNewMountain = (payLoad) => this.addNewMountain(payLoad)
     let handleDeleteMountain = (event) => this.handleDeleteMountain(event)
-
+    if (this.state.currentUser) {
     return(
       <div>
         <HeaderTile title="Top Mountains"/>
@@ -94,7 +95,28 @@ class MountainIndexContainer extends React.Component{
           </div>
         </div>
       </div>
-    )
+    )} else {
+    return(
+      <div>
+        <HeaderTile title="Top Mountains"/>
+        <div className="site-view">
+          <div className="site-form-index">
+            <h2>Create A Mountain</h2>
+            <div className="site-form">
+              <Access
+              />
+            </div>
+          </div>
+          <div className="site-index">
+            <MountainIndex
+              mountains={this.state.mountains}
+              currentUser={this.state.currentUser}
+              handleDeleteMountain={this.handleDeleteMountain}
+            />
+          </div>
+        </div>
+      </div>
+    )}
   }
 }
 export default MountainIndexContainer
