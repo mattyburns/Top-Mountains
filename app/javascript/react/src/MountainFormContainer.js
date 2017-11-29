@@ -13,6 +13,9 @@ class MountainFormContainer extends Component {
       city: '',
       state: '',
       zip: '',
+      trailCount: '',
+      ticketPrice: '',
+      rentalPrice: '',
       imageUrl: '',
       errors: []
     }
@@ -79,6 +82,9 @@ class MountainFormContainer extends Component {
       city: '',
       state: 'Select a state',
       zip: '',
+      trailCount: '',
+      ticketPrice: '',
+      rentalPrice: '',
       imageUrl: ''
     })
   }
@@ -103,6 +109,9 @@ class MountainFormContainer extends Component {
       city: this.state.city,
       state: this.state.state,
       zip: this.state.zip,
+      trailCount: this.state.trailCount,
+      ticketPrice: this.state.ticketPrice,
+      rentalPrice: this.state.rentalPrice,
       image_url: this.state.imageUrl,
       creator_id: this.props.formCurrentUser.id
     }
@@ -160,9 +169,30 @@ class MountainFormContainer extends Component {
         />
 
         <FormItem
+          name="trailCount"
+          content={this.state.trailCount}
+          nameText="Trail Count: (Optional)"
+          handler={this.handleChange}
+        />
+
+        <FormItem
+          name="ticketPrice"
+          content={this.state.ticketPrice}
+          nameText="Ticekt Price: (Optional)"
+          handler={this.handleChange}
+        />
+
+        <FormItem
+          name="rentalPrice"
+          content={this.state.rentalPrice}
+          nameText="Rental Price: (Optional)"
+          handler={this.handleChange}
+        />
+        
+        <FormItem
           name="imageUrl"
           content={this.state.imageUrl}
-          nameText="Image Url:"
+          nameText="Image Url: (Optional)"
           handler={this.handleChange}
         />
 
