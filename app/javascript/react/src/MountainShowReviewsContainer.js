@@ -97,13 +97,14 @@ class MountainShowReviewsContainer extends React.Component{
       <div>
         <HeaderTile title ={this.state.mountain.name}/>
 
-        <div>
-          <MountainInfoTile
-            mountain={this.state.mountain}
-          />
-        </div>
         <div className="site-view">
+
           <div className="site-form-index">
+            <div className="mountain-info-tile">
+              <MountainInfoTile
+                mountain={this.state.mountain}
+              />
+            </div>
             <h2>Write A Review</h2>
             <div className="site-form">
               <ReviewFormContainer
@@ -128,8 +129,15 @@ class MountainShowReviewsContainer extends React.Component{
     return(
       <div>
         <HeaderTile title ={this.state.mountain.name}/>
+
         <div className="site-view">
+
           <div className="site-form-index">
+            <div className="mountain-info-tile">
+              <MountainInfoTile
+                mountain={this.state.mountain}
+              />
+            </div>
             <h2>Write A Review</h2>
             <div className="site-form">
               <Access
