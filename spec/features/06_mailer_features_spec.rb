@@ -4,7 +4,7 @@
 # RSpec.describe UserReviewedItemMailer, type: :mailer do
 #   scenario "someone reviewed someone else's mountain" do
 #   #   ActionMailer::ApplicationMailer.deliveries.clear
-#     reviewer = FactoryGirl.create(:user)
+#     reviewer = FactoryBot.create(:user)
 #     mountain = Mountain.create(
 #       id: 5,
 #       name: "Space Mountain",

@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :mountain do
     name "Space Mountain"
     address "Disney St"
