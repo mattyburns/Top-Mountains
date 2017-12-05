@@ -23,6 +23,7 @@ const MountainTile = props => {
         <Link to= {`/mountains/${props.mountain.id}`}>
           <h3 className="mountain-name"><strong>{props.mountain.name}:</strong> {props.mountain.city}, {props.mountain.state}</h3>
         </Link>
+        <p><b>Rating: </b>{props.mountain.rating}</p>
       </div>
       <button id="button" name={props.mountain.id} className={`${blankOrDelete}`} type="button" onClick={props.handleDeleteMountain}>Delete</button>
     </div>

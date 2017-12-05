@@ -89,15 +89,6 @@ class ReviewFormContainer extends Component {
     return (
       <form className="callout" id="review-form">
 
-
-        <RadioStars
-          name="rating"
-          handler={this.handleChange}
-          content={this.state.rating}
-        />
-        <br/>
-        <br/>
-
         <TextAreaFormItem
           name="skiingReview"
           content={this.state.skiingReview}
@@ -118,6 +109,13 @@ class ReviewFormContainer extends Component {
           nameText="Lodging Review"
           handler={this.handleChange}
         />
+        <RadioStars
+          name="rating"
+          handler={this.handleChange}
+          content={this.state.rating}
+        />
+        <br/>
+        <br/>
         <div>
           {errors}
         </div>

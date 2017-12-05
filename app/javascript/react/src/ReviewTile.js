@@ -12,12 +12,12 @@ const ReviewTile = props => {
     <div className="site-tile">
 
       <div className="review-text">
-        <p><b>{props.username}</b></p>
-        <p><b>Rating:</b> {props.rating}</p>
-        <p><b>Skiing Review:</b> {props.skiingReview}</p>
-        <p><b>Food Review:</b> {props.foodReview}</p>
-        <p><b>Lodging Review:</b> {props.lodgingReview}</p>
-        <p><b>Votes:</b> {props.voteTotal}</p>
+        <p><b>User: </b>{props.username}</p>
+        <p><b>Rating: </b>{props.rating}</p>
+        <p><b>Skiing Review: </b>{props.skiingReview}</p>
+        <p><b>Food Review: </b>{props.foodReview}</p>
+        <p><b>Lodging Review: </b>{props.lodgingReview}</p>
+        <p><b>Votes: </b> {props.voteTotal}</p>
       </div>
 
       <div>
@@ -28,7 +28,7 @@ const ReviewTile = props => {
           value="1"
           id={props.id}
           onClick={props.voteHandler}>
-          Upvote
+          ⇧
         </button>
         <button
           className="button"
@@ -37,7 +37,7 @@ const ReviewTile = props => {
           value="-1"
           id={props.id}
           onClick={props.voteHandler}>
-          Downvote
+          ⇩
         </button>
       </div>
 

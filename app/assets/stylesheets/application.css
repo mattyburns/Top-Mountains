@@ -14,131 +14,163 @@
  *= require_self
  */
  @import url('https://fonts.googleapis.com/css?family=Lobster%7CSource+Sans+Pro');
+ @import url('https://fonts.googleapis.com/css?family=Raleway');
  @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+ @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
 
-body {
- font-family: 'Source Sans Pro', sans-serif;
- margin: 0px;
- background-image: url(http://www.ospreypacks.com/stories/wp-content/uploads/2012/04/g19.jpg);
-}
+ body {
+   font-family:'Montserrat',sans-serif;position:relative;
+   margin: 0px;
+
+
+ }
+
+ h1{
+   padding: 1em;
+   margin: 1em;
+ }
 
 h2 {
- font-family: 'Lobster', cursive;
- color: white;
- margin-top: 5px;
- margin-bottom: 10px;
- text-align: center;
- text-shadow: 2px 2px black;
+  font-family:'Montserrat',sans-serif;position:relative;
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+ /*text-shadow: 2px 2px black;*/
 }
 
-h3 {
- margin-top: 5px;
- margin-bottom: 5px;
-}
+ h3 {
+   margin-top: 5px;
+   margin-bottom: 5px;
+ }
 
-p {
- padding-bottom: 5px;
- margin-top: 5px;
- margin-bottom: 5px;
- overflow-wrap: normal;
- text-overflow: ellipsis;
- word-wrap: break-word;
+ p {
+   padding-bottom: 5px;
+   margin-top: 5px;
+   margin-bottom: 5px;
+   overflow-wrap: normal;
+   text-overflow: ellipsis;
+   word-wrap: break-word;
 
-}
+ }
+
+.review-text {
+   margin-top: 5px;
+   margin-bottom: 5px;
+   overflow-wrap: normal;
+   text-overflow: ellipsis;
+   word-wrap: break-word;
+   white-space: initial;
+ }
 
 .search-results {
- background-color: #ededed;
- text-align: center;
- float: center;
- padding-left: 20px;
- padding-top: 10px;
- padding-bottom: 10px;
+  background-color: #ededed;
+  text-align: center;
+  float: center;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .search-results a {
- color: black;
+  color: black;
 }
 .search-results a:hover {
- color: blue;
+  color: blue;
 }
 
 ul {
- margin-top: 0px;
- margin-left: 0px
+  margin-top: 0px;
+  margin-left: 0px
 }
 
-img {
- width: 100px;
- height: 60px;
-}
-
-a {
- color: white;
- text-decoration: none;
-}
-
-a:hover{
- color: #dbdbdb;
-}
+ img {
+   width: 100px;
+   height: 60px;
+ }
 
 
-.button {
- border: none;
- color: white;
- border-radius: 4px;
- text-align: center;
- text-decoration: none;
- display: inline-block;
- margin: 4px 2px;
- -webkit-transition-duration: 0.4s; /* Safari */
- transition-duration: 0.4s;
- cursor: pointer;
- background-color: white;
- color: black;
- border: thin solid #e7e7e7;
-}
+ a {
+   color: white;
+   text-decoration: none;
+ }
 
-.button:hover {
- background-color: #9fbcdb;
-}
-
-.flasherror{
- float: inherit;
- text-align: center;
- align-items: center;
- color: white;
-}
-
-.avatar {
- margin: 1em;
- padding: 5px;
- background: white;
- border-width: thin;
- border-style: solid;
- border-color: white;
-}
+ a:hover{
+   color: #dbdbdb;
+ }
 
 
-#button.delete {
- border: none;
- color: white;
- border-radius: 4px;
- text-align: center;
- text-decoration: none;
- display: inline-block;
- margin: 4px 2px;
- -webkit-transition-duration: 0.4s; /* Safari */
- transition-duration: 0.4s;
- cursor: pointer;
- background-color: white;
- color: black;
- border: thin solid #e7e7e7;
-}
+ .mountain-tile-name{
+   width: 100%;
+   overflow-wrap: normal;
+   text-overflow: ellipsis;
+   word-wrap:normal;
+   white-space: initial;
+ }
 
-#button.delete:hover {
- background-color: #9fbcdb;
-}
-.blank {
- display: none;
-}
+ .mountainimage{
+   grid-column: 1;
+   float: left;
+   width: 100px;
+   height: 60px;
+   margin-right: 10px;
+   margin-bottom: 10px;
+ }
+
+
+ .button {
+     border: none;
+     color: white;
+     border-radius: 4px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     margin: 4px 2px;
+     -webkit-transition-duration: 0.4s; /* Safari */
+     transition-duration: 0.4s;
+     cursor: pointer;
+     background-color: white;
+     color: black;
+     border: thin solid #e7e7e7;
+ }
+ .button:hover {
+   background-color: #9fbcdb;
+ }
+
+ .avatar {
+   margin: 1em;
+   padding: 5px;
+   background: white;
+   border-width: thin;
+   border-style: solid;
+   border-color: white;
+ }
+
+
+ #button.delete {
+   border: none;
+   color: white;
+   border-radius: 4px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   margin: 4px 2px;
+   -webkit-transition-duration: 0.4s; /* Safari */
+   transition-duration: 0.4s;
+   cursor: pointer;
+   background-color: white;
+   color: black;
+   border: thin solid #e7e7e7;
+ }
+
+ #button.delete:hover {
+   background-color: #9fbcdb;
+ }
+ .blank {
+   display: none;
+ }
+
+ .radioStars {
+
+ }
