@@ -6,7 +6,7 @@ const RadioStars = props => {
   return(
 
 <div className="radioStars">
-  <label className="rate-area" value={props.content} onChange={props.handler}  >Rating
+  <label className="rate-area" value={props.content} onChange={props.handler}  >
     <input type="radio" id="5-star" name="rating" value="5"  /><label htmlFor="5-star" >5 stars</label>
     <input type="radio" id="4-star" name="rating" value="4"  /><label htmlFor="4-star" >4 stars</label>
     <input type="radio" id="3-star" name="rating" value="3"  /><label htmlFor="3-star" >3 stars</label>

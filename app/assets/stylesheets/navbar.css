@@ -1,33 +1,61 @@
 nav {
-  font-size: 15px;
+  font-size: 1.5em;
   background-color: black;
+  height: 34px;
   color: white;
-  font-family: helvetica;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  font-family:'Montserrat',sans-serif;position:relative;padding-left: 1rem;
+  padding-right: 1em;
   padding-bottom: 3px;
   padding-top: 4px;
   margin-left: none;
   margin-right: none;
   vertical-align:  middle;
   white-space: nowrap;
+
 }
 
+
 .search-bar {
-  background-color: black;
-  box-sizing:border-box;
+  /*background-color: black;*/
+  /*box-sizing:border-box;*/
   width: 40%;
+  min-width: 125px;
   padding: 0px;
   margin: 0px;
   border: none;
+  border-radius: 0px;
   float: left;
   align-items: left;
   white-space: nowrap;
 }
 
 .sign-in {
+  padding-top: 4px;
+  font-size: .75em;
   float:right;
   text-align: right;
   align-items: center;
-  font-family: 'Source Sans Pro', sans-serif
+  justify-content: center;
+  align-content: center;
+  font-family:'Montserrat',sans-serif;
+  position:relative;}
+
+.home{
+  font-size: 1em;
+  font-family: 'Lobster', cursive;
+  float: inherit;
+  text-align: center;
+  align-items: center;
+}
+.flasherror{
+  float: inherit;
+  text-align: center;
+  align-items: center;
+  color: white;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 40% 20% 20% 20%;
+  justify-content: center;
 }

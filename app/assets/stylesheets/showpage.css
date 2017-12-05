@@ -8,9 +8,13 @@
  }
 
 .mountain-info-tile{
-  background-color: #ededed;
+  background-color: white;
   opacity: 0.8;
   padding: 10px;
   justify-content: center;
   color: black;
+  border-radius:8px;
+  box-shadow:0 0 40px -10px #000;
+  padding:20px 30px;
+  font-family:'Montserrat',sans-serif;position:relative
 }

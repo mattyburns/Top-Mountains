@@ -1,20 +1,23 @@
 .new_user {
-  align-content: center;
-  width: 14%;
-  margin-left: 42%;
+  width: 200px;
+  margin: auto;
   padding: 20px;
  }
 
 .edit_user {
- align-content: center;
- width: 20%;
- margin-left: 39%;
- padding: 20px;
+  width: 200px;
+  margin: auto;
+  padding: 20px;
 }
 
 .cancel-account {
-  text-align: center;
-  width: 25%;
-  margin-left: 37%;
+  width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.user-list{
+  width: 200px;
+  margin: auto;
   padding: 20px;
 }
