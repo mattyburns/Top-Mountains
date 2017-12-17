@@ -15,9 +15,9 @@ const MountainIndex = props => {
   return(
     <div>
       <h2>Top Rated Mountains</h2>
-      <ul>
+      <div>
         {mountains}
-      </ul>
+      </div>
     </div>
   );
 }
