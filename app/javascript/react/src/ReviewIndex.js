@@ -23,9 +23,9 @@ const ReviewIndex = props => {
   return(
     <div>
       <h2>Reviews</h2>
-      <ul>
+      <div>
         {reviews}
-      </ul>
+      </div>
     </div>
   );
 }

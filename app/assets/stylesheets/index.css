@@ -1,5 +1,8 @@
 .site-view{
- display: grid;
+  display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+
  grid-template-columns: 30% 70%;
  grid-gap: 10px;
  color: #444;
@@ -15,10 +18,15 @@
 }
 
 .site-tile{
+ max-width: 600px;
+ min-width: 250px;
  min-height: 60px;
- align-self: left;
+ flex-grow: 2
+ /* align-self: left; */
  padding: 12px;
- margin-bottom: 10px;
+ margin: 10px;
+ margin-left: 20px;
+ margin-right: 20px;
  background-color: white;
  border-color: #ededed;
  border-width: medium;
@@ -27,7 +35,7 @@
  grid-template-columns: 50% 50%;
  padding-bottom: 36px;
  border-radius:8px;
- box-shadow:0 0 40px -10px #000;
+ box-shadow:10px 10px 30px -15px #000;
  padding:20px 30px;
  font-family:'Montserrat',sans-serif;position:relative
 }
@@ -75,6 +83,10 @@
   background-repeat: no-repeat;
   /*background-attachment: fixed;*/
   background-position: 50% 50%;
+}
+
+.header-tile{
+  box-shadow:10px 10px 30px -15px #000;
 }
 
 .title h1 {

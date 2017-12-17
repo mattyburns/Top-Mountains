@@ -11,7 +11,7 @@ nav {
   margin-right: none;
   vertical-align:  middle;
   white-space: nowrap;
-
+  box-shadow:10px 10px 30px -15px #000;
 }
 
 
@@ -21,12 +21,13 @@ nav {
   width: 40%;
   min-width: 125px;
   padding: 0px;
-  margin: 0px;
+  margin-top: 3px;
   border: none;
   border-radius: 0px;
   float: left;
   align-items: left;
   white-space: nowrap;
+  font-size: .75em;
 }
 
 .sign-in {
